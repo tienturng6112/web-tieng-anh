@@ -27,11 +27,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const openVocabPage = (e) => {
         if (e) e.preventDefault();
         vocabPage.classList.remove('hidden');
+        
+        // Update sidebar active state
+        if (navVocab) {
+            navItems.forEach(i => i.classList.remove('active'));
+            navVocab.classList.add('active');
+        }
     };
 
     const closeVocabPage = (e) => {
         if (e) e.preventDefault();
         vocabPage.classList.add('hidden');
+        
+        // Update sidebar active state back to home
+        if (navHome) {
+            navItems.forEach(i => i.classList.remove('active'));
+            navHome.classList.add('active');
+        }
     };
 
     if (btnAddWord && vocabPage && btnCloseVocab) {
