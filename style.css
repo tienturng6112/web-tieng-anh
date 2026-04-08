@@ -159,15 +159,88 @@ body {
     align-items: center;
 }
 
-.points, .mode {
+.points {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     font-size: 0.85rem;
+    font-weight: 600;
 }
 
 .coin-icon {
     color: #ffd700;
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+}
+
+.mode {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+/* √Ånh s√°ng ch·∫°y ngang n√∫t li√™n t·ª•c khi l∆∞·ªõt */
+.mode::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transition: left 0.5s ease;
+}
+
+.mode:hover::before {
+    left: 100%;
+}
+
+.mode:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #f2c94c;
+    color: #f2c94c;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(242, 201, 76, 0.25);
+}
+
+.mode i {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* L√∫c m·∫∑t tr·ªùi th√¨ xoay v√† b·ª± l√™n */
+.mode:hover i {
+    transform: rotate(45deg) scale(1.15);
+}
+
+.mode:active {
+    transform: scale(0.92);
+}
+
+/* Tr·∫°ng th√°i T·ªëi (N√∫t s·∫Ω b√°o hi·ªáu ƒë·ªïi icon M·∫∑t TrƒÉng v·ªõi m√†u T√≠m neon) */
+.mode.is-light {
+    border-color: #a855f7;
+    color: #d8b4fe;
+    background: rgba(168, 85, 247, 0.15);
+}
+
+.mode.is-light:hover {
+    border-color: #c084fc;
+    color: #e9d5ff;
+    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
+}
+
+/* L√∫c m·∫∑t trƒÉng th√¨ l√¢y nh·∫π sang h∆∞·ªõng kh√°c */
+.mode.is-light:hover i {
+    transform: rotate(-30deg) scale(1.15);
 }
 
 /* Main Content */
@@ -647,12 +720,30 @@ body {
     gap: 1.2rem;
     overflow-x: auto;
     margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    scrollbar-width: none; /* Hide for Clean look */
+    padding-bottom: 1rem; /* TƒÉng padding ƒë·ªÉ c√≥ ch·ªó cho thanh cu·ªôn */
+    /* ƒê√£ x√≥a scrollbar-width: none ƒë·ªÉ hi·ªán thanh cu·ªôn Firefox */
+    scrollbar-color: var(--accent-green) #1e293b;
+    scrollbar-width: thin;
 }
 
+/* T√πy ch·ªânh thanh cu·ªôn ngang cho Chrome/Safari */
 .cards-scroll::-webkit-scrollbar {
-    display: none;
+    height: 6px;
+    display: block; /* Kh√¥i ph·ª•c hi·ªÉn th·ªã */
+}
+
+.cards-scroll::-webkit-scrollbar-track {
+    background: #1e293b;
+    border-radius: 4px;
+}
+
+.cards-scroll::-webkit-scrollbar-thumb {
+    background: var(--accent-green);
+    border-radius: 4px;
+}
+
+.cards-scroll::-webkit-scrollbar-thumb:hover {
+    background: #219653;
 }
 
 .course-card {
@@ -739,12 +830,12 @@ body {
 }
 
 .scroll-progress {
+    display: none; /* ·∫®n ƒëi ƒë∆∞·ªùng k·∫ª xanh l√° gi·∫£ */
     height: 2px;
     background: #1e293b;
     width: 100%;
     margin-top: 0.5rem;
     position: relative;
-    display: flex;
     align-items: center;
 }
 
@@ -1289,3 +1380,192 @@ body {
 
 .btn-neo-green:hover { transform: translateY(-2px); box-shadow: 0 5px 0 #059669; }
 .btn-neo-green:active { transform: translateY(2px); box-shadow: 0 0 0 #059669; }
+
+/* ========================================================= */
+/* --- LIGHT MODE TH M V¿O THEO Y U C?U –? S¡NG H?T UI ---   */
+/* ========================================================= */
+body.light-theme {
+    --bg-dark: #f8fafc;        /* M‡u n?n s·ng d?u m?t */
+    --sidebar-bg: #ffffff;     /* N?n menu tr?ng */
+    --card-bg: #ffffff;        /* N?n th? tr?ng */
+    --text-primary: #1e293b;   /* Ch? den ng? d?m (d? d?c) */
+    --text-secondary: #64748b; /* Ch? x·m nh?t */
+    --border-color: #e2e8f0;   /* Vi?n s·ng hon */
+    
+    /* V?n gi? m‡u nh?n */
+    --accent-orange: #f59e0b;
+    --accent-green: #10b881;
+}
+
+/* Ghi dË m‡u n?n b? c? d?nh c?a c·c box den t?i */
+body.light-theme .course-card {
+    background: var(--card-bg);
+}
+
+body.light-theme .streak-card {
+    background: linear-gradient(135deg, #ffffff, #fffbeb);
+}
+
+body.light-theme .pill {
+    background: #f1f5f9;
+}
+
+body.light-theme .pill:hover {
+    background: #e2e8f0;
+    color: var(--text-primary);
+}
+
+body.light-theme .nav-item.active {
+    background: #f1f5f9;
+}
+
+body.light-theme .nav-item:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* --- TH M B”NG M? (DROP SHADOW) CHO T?T C? BOX CHO D? NHÃN --- */
+body.light-theme .card,
+body.light-theme .stat-box,
+body.light-theme .streak-card,
+body.light-theme .quick-card,
+body.light-theme .course-card,
+body.light-theme .sidebar {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06); 
+    border-color: rgba(0, 0, 0, 0.05); /* Vi?n m? m? thay vÏ g?t */
+}
+
+body.light-theme .card:hover,
+body.light-theme .stat-box:hover,
+body.light-theme .streak-card:hover,
+body.light-theme .quick-card:hover,
+body.light-theme .course-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); /* BÛng to khi rÍ chu?t */
+    transform: translateY(-4px);
+}
+
+/* –?i l?i m‡u ch? bÍn trong c·c box b? t?i */
+body.light-theme .course-card h4 {
+    color: var(--text-primary);
+}
+
+body.light-theme .path-header h3 {
+    color: var(--text-primary);
+}
+
+body.light-theme .difficulty .level,
+body.light-theme .vocab-info {
+    color: var(--text-secondary);
+}
+
+/* Mode Button trong Light mode ch?nh l?i tÌ bÛng */
+body.light-theme .mode {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* –? bÛng nh? cho n˙t mode d? nhÏn trÍn n?n tr?ng */
+    border-color: rgba(0,0,0,0.1);
+}
+
+/* Can ch?nh m‡u n?n Custom scrollbar cho Lightmode */
+body.light-theme .cards-scroll::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+/* ========================================================= */
+/* --- C?P NH?T LIGHT MODE: …P S¡NG TO¿N B? WEBSITE ---      */
+/* ========================================================= */
+body.light-theme {
+    background-color: #f8fafc !important;
+    color: #0f172a !important;
+}
+
+/* SIDEBAR & MENU TR¡I */
+body.light-theme .sidebar {
+    background-color: #ffffff !important;
+    border-right: 1px solid #e2e8f0 !important;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.03) !important;
+}
+
+body.light-theme .logo, 
+body.light-theme .user-name {
+    color: #0f172a !important;
+}
+
+body.light-theme .nav-item {
+    color: #64748b !important;
+}
+
+body.light-theme .nav-item:hover {
+    background: rgba(0, 0, 0, 0.05) !important;
+    color: #0f172a !important;
+}
+
+body.light-theme .nav-item.active {
+    background: #f1f5f9 !important;
+    color: #10b881 !important;
+    border-left-color: #10b881 !important;
+}
+
+body.light-theme .user-subtitle,
+body.light-theme .points span {
+    color: #64748b !important;
+}
+
+/* N?N C¡C KH?I B N PH?I (CARDS) */
+body.light-theme .card,
+body.light-theme .stat-box,
+body.light-theme .course-card,
+body.light-theme .quick-card {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light-theme .streak-card {
+    background: linear-gradient(135deg, #ffffff, #fffbeb) !important;
+    border-color: #fde68a !important;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.08) !important;
+}
+
+/* TEXT TRONG C¡C KH?I S¡NG L N */
+body.light-theme h3, 
+body.light-theme h4, 
+body.light-theme .stat-value,
+body.light-theme .quick-info h3 {
+    color: #0f172a !important;
+}
+
+body.light-theme .stat-label, 
+body.light-theme .quick-info p,
+body.light-theme .course-meta,
+body.light-theme .difficulty span,
+body.light-theme .difficulty .level,
+body.light-theme .vocab-info,
+body.light-theme .count-unit {
+    color: #64748b !important;
+}
+
+/* C¡C N⁄T (PILLS) L? TRÃNH */
+body.light-theme .pill {
+    background-color: #f1f5f9 !important;
+    color: #64748b !important;
+    border-color: #e2e8f0 !important;
+}
+
+body.light-theme .pill:hover {
+    background-color: #e2e8f0 !important;
+    color: #0f172a !important;
+}
+
+body.light-theme .pill.active {
+    background-color: #10b881 !important;
+    color: #ffffff !important;
+    border-color: #10b881 !important;
+}
+
+/* B”NG –? (SHADOWS) M?NH HON KHI R  CHU?T */
+body.light-theme .card:hover,
+body.light-theme .stat-box:hover,
+body.light-theme .streak-card:hover,
+body.light-theme .quick-card:hover,
+body.light-theme .course-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+    transform: translateY(-4px) !important;
+}

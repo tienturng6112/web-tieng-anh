@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const openVocabPage = (e) => {
         if (e) e.preventDefault();
         vocabPage.classList.remove('hidden');
-        
+
         // Update sidebar active state
         if (navVocab) {
             navItems.forEach(i => i.classList.remove('active'));
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeVocabPage = (e) => {
         if (e) e.preventDefault();
         vocabPage.classList.add('hidden');
-        
+
         // Update sidebar active state back to home
         if (navHome) {
             navItems.forEach(i => i.classList.remove('active'));
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnAddWord.addEventListener('click', openVocabPage);
         if (navVocab) navVocab.addEventListener('click', openVocabPage);
         if (navHome) navHome.addEventListener('click', closeVocabPage);
-        
+
         btnCloseVocab.addEventListener('click', closeVocabPage);
     }
 
@@ -62,11 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btnOpenAI && aiModal) {
         btnOpenAI.addEventListener('click', () => aiModal.classList.remove('hidden'));
-        
+
         const closeAIModal = () => aiModal.classList.add('hidden');
         if (btnCloseAI) btnCloseAI.addEventListener('click', closeAIModal);
         if (btnCancelAI) btnCancelAI.addEventListener('click', closeAIModal);
-        
+
         // Close on overlay click
         aiModal.addEventListener('click', (e) => {
             if (e.target === aiModal) closeAIModal();
@@ -81,11 +81,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btnOpenMulti && multiModal) {
         btnOpenMulti.addEventListener('click', () => multiModal.classList.remove('hidden'));
-        
+
         const closeMultiModal = () => multiModal.classList.add('hidden');
         if (btnCloseMulti) btnCloseMulti.addEventListener('click', closeMultiModal);
         if (btnCancelMulti) btnCancelMulti.addEventListener('click', closeMultiModal);
-        
+
         // Close on overlay click
         multiModal.addEventListener('click', (e) => {
             if (e.target === multiModal) closeMultiModal();
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const collapseBtn = document.querySelector('.collapse-btn');
     const sidebar = document.querySelector('.sidebar');
     const mainContent = document.querySelector('.main-content');
-    
+
     if (collapseBtn) {
         collapseBtn.addEventListener('click', () => {
             sidebar.classList.toggle('collapsed');
@@ -142,61 +142,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ===== IndexedDB setup for storing media =====
-    const DB_NAME = 'LuyenTuDB';
-    const STORE_NAME = 'heroMedia';
+    // ===== Firebase setup cho Video/Hình ảnh Upload =====
+    // BƯỚC QUAN TRỌNG: Đã thêm Firebase Config thành công!
+    const firebaseConfig = {
+        apiKey: "AIzaSyDnjTJDsdMODW7CDFs7ZxkcCOHY4FyrpHc",
+        authDomain: "web-tieng-anh-d0e2d.firebaseapp.com",
+        projectId: "web-tieng-anh-d0e2d",
+        storageBucket: "web-tieng-anh-d0e2d.firebasestorage.app",
+        messagingSenderId: "238664095418",
+        appId: "1:238664095418:web:3eb36b21f6dfc49f801483",
+        measurementId: "G-CN8C97CGJD"
+    };
 
-    function initDB() {
-        return new Promise((resolve, reject) => {
-            const request = indexedDB.open(DB_NAME, 1);
-            request.onerror = () => reject(request.error);
-            request.onsuccess = () => resolve(request.result);
-            request.onupgradeneeded = (e) => {
-                const db = e.target.result;
-                if (!db.objectStoreNames.contains(STORE_NAME)) {
-                    db.createObjectStore(STORE_NAME);
-                }
-            };
-        });
+    let storage = null;
+    let db = null;
+
+    // Khởi tạo Firebase
+    if (typeof firebase !== 'undefined') {
+        firebase.initializeApp(firebaseConfig);
+        db = firebase.firestore();
     }
 
-    async function saveMedia(file) {
-        try {
-            const db = await initDB();
-            const tx = db.transaction(STORE_NAME, 'readwrite');
-            tx.objectStore(STORE_NAME).put(file, 'savedMedia');
-        } catch (e) {
-            console.error('Không thể lưu ảnh/video:', e);
-        }
-    }
+    // ===== Cấu hình Cloudinary (Để upload file miễn phí) =====
+    const CLOUDINARY_CLOUD_NAME = "dzutobhcm";
+    const CLOUDINARY_UPLOAD_PRESET = "web tiếng anh";
 
-    async function loadMedia() {
-        try {
-            const db = await initDB();
-            const tx = db.transaction(STORE_NAME, 'readonly');
-            const request = tx.objectStore(STORE_NAME).get('savedMedia');
-            return new Promise((resolve, reject) => {
-                request.onsuccess = () => resolve(request.result);
-                request.onerror = () => reject(request.error);
-            });
-        } catch (e) {
-            console.error('Không thể tải ảnh/video:', e);
-            return null;
-        }
-    }
-
-    // ===== Handle hero media file upload =====
     const heroMediaUpload = document.getElementById('hero-media-upload');
     const heroMediaContainer = document.getElementById('hero-media-container');
     const muteToggleBtn = document.getElementById('mute-toggle-btn');
-
-    function displayMedia(file) {
-        const fileURL = URL.createObjectURL(file);
+    const heroOverlay = document.querySelector('.hero-overlay');
+    
+    // Hàm hiển thị hình ảnh / video
+    function displayMedia(source, isFile = false) {
+        let srcURL = isFile ? URL.createObjectURL(source) : source;
         heroMediaContainer.innerHTML = '';
         
-        if (file.type.startsWith('video/')) {
+        // Kiểm tra loại video: nếu là file thì check type, nếu là link Cloudinary thì check đuôi file
+        const isVideo = isFile ? source.type.startsWith('video/') : (srcURL.match(/\.(mp4|webm|mov|ogg|m4v)/i) || srcURL.includes('/video/upload/'));
+
+        if (isVideo) {
             const video = document.createElement('video');
-            video.src = fileURL;
+            video.src = srcURL;
             video.autoplay = true;
             video.muted = true;
             video.loop = true;
@@ -210,9 +196,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } else {
             const img = document.createElement('img');
-            img.src = fileURL;
+            img.src = srcURL;
             heroMediaContainer.appendChild(img);
-
             if (muteToggleBtn) muteToggleBtn.classList.add('hidden');
         }
     }
@@ -232,21 +217,79 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (heroMediaUpload && heroMediaContainer) {
-        // Khôi phục hình/video cũ khi mở lại trang
-        loadMedia().then(file => {
-            if (file) {
-                displayMedia(file);
+    // Tải media đã lưu từ Firebase Firestore khi vừa vào web
+    async function loadSavedMedia() {
+        if (!db) return;
+        try {
+            const docRef = db.collection("settings").doc("heroSection");
+            const docSnap = await docRef.get();
+            if (docSnap.exists) {
+                const data = docSnap.data();
+                if (data.mediaUrl) {
+                    displayMedia(data.mediaUrl, false);
+                }
             }
-        });
+        } catch (error) {
+            console.error("Lỗi khi tải dữ liệu từ Firebase:", error);
+        }
+    }
 
-        // Xử lý sự kiện khi có file mới
+    if (heroMediaUpload && heroMediaContainer) {
+        // Gọi hàm tải dữ liệu khi trang vừa mở
+        if (db) loadSavedMedia();
+
         heroMediaUpload.addEventListener('change', async (event) => {
             const file = event.target.files[0];
-            if (file) {
-                displayMedia(file);     // Hiển thị ngay
-                await saveMedia(file);  // Lưu vào trình duyệt
+            if (!file) return;
+
+            // 1. Hiển thị tạm ngay lập tức
+            displayMedia(file, true);
+
+            try {
+                // Đổi hiển thị overlay thành Đang tải lên...
+                const oldOverlayHTML = heroOverlay.innerHTML;
+                heroOverlay.innerHTML = '<i data-lucide="loader-2"></i><span>Đang tải lên Cloud...</span>';
+                if (window.lucide) window.lucide.createIcons();
+
+                // 2. Upload file lên Cloudinary thông qua API (Không cần thư viện cầu kỳ)
+                const formData = new FormData();
+                formData.append('file', file);
+                formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+
+                const response = await fetch(`https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/auto/upload`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+                
+                if (data.secure_url) {
+                    const downloadURL = data.secure_url;
+                    
+                    // 3. Lưu link URL vào Firebase Firestore (Database)
+                    if (db) {
+                        await db.collection("settings").doc("heroSection").set({
+                            mediaUrl: downloadURL,
+                            updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                        });
+                    }
+
+                    console.log("Upload thành công vĩnh viễn:", downloadURL);
+                } else {
+                    throw new Error(data.error ? data.error.message : "Upload thất bại");
+                }
+
+                // Khôi phục lại giao diện nút
+                heroOverlay.innerHTML = oldOverlayHTML;
+                if (window.lucide) window.lucide.createIcons();
+                
+            } catch (error) {
+                console.error("Lỗi upload:", error);
+                alert("Lỗi khi tải file: " + error.message);
+                heroOverlay.innerHTML = '<i data-lucide="camera"></i><span>Thay đổi Ảnh / Video</span>';
+                if (window.lucide) window.lucide.createIcons();
             }
         });
     }
 });
+
