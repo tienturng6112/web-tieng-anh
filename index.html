@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyentu.com | Nền tảng học tập thông minh</title>
+    <meta name="description" content="Luyện từ vựng, luyện thi IELTS, TOEIC và THPT hiệu quả với phương pháp học hiện đại.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Philosopher:ital,wght@1,700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="logo-text">Ma Đạo Tông Sư</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" id="nav-home" class="nav-item active">
+                    <i data-lucide="home"></i>
+                    <span></span>
+                </a>
+                <a href="#" id="nav-vocab" class="nav-item">
+                    <i data-lucide="layers"></i>
+                    <span>Bộ từ vựng</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="book-open"></i>
+                    <span>Từ vựng</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="gamepad-2"></i>
+                    <span>Game phản xạ</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="shopping-bag"></i>
+                    <span>Cửa hàng</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="bar-chart-2"></i>
+                    <span>Xếp hạng</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="collapse-btn">
+                    <i data-lucide="chevrons-left"></i>
+                </button>
+                <div class="user-profile">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=user1" alt="Avatar" class="avatar">
+                    <div class="user-info">
+                        <span class="user-name">Trung Tien Tr...</span>
+                        <span class="user-subtitle">Nhấn để xem hồ sơ</span>
+                    </div>
+                </div>
+                <div class="theme-toggle">
+                    <div class="points">
+                        <i data-lucide="coins" class="coin-icon"></i>
+                        <span>110</span>
+                    </div>
+                    <div class="mode">
+                        <i data-lucide="sun"></i>
+                        <span>Sáng</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-right">
+                    <div class="streak-badge">
+                        <i data-lucide="flame"></i>
+                        <span>1</span>
+                    </div>
+                    <button class="upgrade-btn">
+                        <i data-lucide="zap"></i>
+                        NÂNG CẤP PRO
+                    </button>
+                </div>
+            </header>
+
+            <section class="dashboard-grid">
+                <!-- Hero/Image Section -->
+                <div class="card hero-card">
+                    <label class="hero-label" for="hero-media-upload" title="Nhấn để đổi ảnh/video">
+                        <div id="hero-media-container" class="hero-media-container">
+                            <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=1471&auto=format&fit=crop" alt="Hero">
+                        </div>
+                        <div class="hero-overlay">
+                            <i data-lucide="camera"></i>
+                            <span>Thay đổi Ảnh / Video</span>
+                        </div>
+                    </label>
+                    <input type="file" id="hero-media-upload" accept="image/*,video/*" hidden>
+                    <button id="mute-toggle-btn" class="mute-btn hidden" title="Bật/Tắt âm thanh">
+                        <i data-lucide="volume-x" id="mute-icon"></i>
+                    </button>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <span class="stat-value">0</span>
+                        <span class="stat-label">Tổng từ</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value">0</span>
+                        <span class="stat-label">Đã thuộc</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value">0%</span>
+                        <span class="stat-label">Tiến độ</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value">0</span>
+                        <span class="stat-label">Đã thuộc</span>
+                    </div>
+                </div>
+
+                <!-- Streak Progress -->
+                <div class="card streak-card">
+                    <div class="streak-header">
+                        <i data-lucide="flame"></i>
+                        <span>CHUỖI NGÀY HỌC</span>
+                    </div>
+                    <div class="streak-content">
+                        <div class="streak-count">
+                            <span class="count-num">1</span>
+                            <span class="count-unit">ngày</span>
+                        </div>
+                        <div class="streak-days">
+                            <div class="day active">T2</div>
+                            <div class="day">T3</div>
+                            <div class="day">T4</div>
+                            <div class="day">T5</div>
+                            <div class="day">T6</div>
+                            <div class="day">T7</div>
+                            <div class="day">CN</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Access -->
+            <section class="quick-access">
+                <h2 class="section-title">Truy cập nhanh</h2>
+                <div class="quick-grid">
+                    <div class="quick-card" id="btn-add-word">
+                        <div class="quick-icon-box plus">
+                            <i data-lucide="plus"></i>
+                        </div>
+                        <div class="quick-info">
+                            <h3>Thêm từ</h3>
+                            <p>Tạo từ vựng cá nhân</p>
+                        </div>
+                        <i data-lucide="arrow-right" class="arrow"></i>
+                    </div>
+                    <div class="quick-card">
+                        <div class="quick-icon-box practice">
+                            <i data-lucide="zap"></i>
+                        </div>
+                        <div class="quick-info">
+                            <h3>Luyện tập</h3>
+                            <p>Flashcard & Games</p>
+                        </div>
+                        <i data-lucide="arrow-right" class="arrow"></i>
+                    </div>
+                    <div class="quick-card">
+                        <div class="quick-icon-box leader">
+                            <i data-lucide="award"></i>
+                        </div>
+                        <div class="quick-info">
+                            <h3>Xếp hạng</h3>
+                            <p>Xem thành tích</p>
+                        </div>
+                        <i data-lucide="arrow-right" class="arrow"></i>
+                    </div>
+                    <div class="quick-card">
+                        <div class="quick-icon-box community">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <div class="quick-info">
+                            <h3>Cộng đồng</h3>
+                            <p>Chọn Fb hoặc Zalo</p>
+                        </div>
+                        <i data-lucide="arrow-right" class="arrow"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Learning Path -->
+            <section class="learning-path">
+                <h2 class="section-title">LỘ TRÌNH HỌC</h2>
+                <div class="filter-pills">
+                    <button class="pill active">Tất cả</button>
+                    <button class="pill">THPT</button>
+                    <button class="pill">Sách IELTS</button>
+                    <button class="pill">IELTS</button>
+                    <button class="pill">TOEIC</button>
+                    <button class="pill">Người nổi tiếng</button>
+                    <button class="pill">Theo level</button>
+                    <button class="pill">Người đi làm</button>
+                    <button class="pill">THCS</button>
+                </div>
+
+                <div class="path-section">
+                    <div class="path-header">
+                        <h3>THPT</h3>
+                        <span class="count">7 lộ trình</span>
+                    </div>
+                    <div class="cards-scroll">
+                        <div class="course-card">
+                            <h4>Luyện thi HSA - VACT</h4>
+                            <div class="course-meta">
+                                <span><i data-lucide="layers"></i> 29 bộ từ</span>
+                            </div>
+                            <div class="difficulty">
+                                <span>Độ khó</span>
+                                <div class="diff-bar"><div class="fill" style="width: 20%;"></div></div>
+                                <span class="level">1/5</span>
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <h4>Từ vựng VIP 90 Cô MP</h4>
+                            <div class="course-meta">
+                                <span><i data-lucide="layers"></i> 10 bộ từ</span>
+                            </div>
+                            <div class="difficulty">
+                                <span>Độ khó</span>
+                                <div class="diff-bar"><div class="fill" style="width: 40%;"></div></div>
+                                <span class="level">2/5</span>
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <h4>Anh 10 Global Success</h4>
+                            <div class="course-meta">
+                                <span><i data-lucide="layers"></i> 10 bộ từ</span>
+                            </div>
+                            <div class="difficulty">
+                                <span>Độ khó</span>
+                                <div class="diff-bar"><div class="fill" style="width: 20%;"></div></div>
+                                <span class="level">1/5</span>
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <h4>Anh 11 Global Success</h4>
+                            <div class="course-meta">
+                                <span><i data-lucide="layers"></i> 10 bộ từ</span>
+                            </div>
+                            <div class="difficulty">
+                                <span>Độ khó</span>
+                                <div class="diff-bar"><div class="fill" style="width: 20%;"></div></div>
+                                <span class="level">1/5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scroll-progress"><div class="progress-bar"></div></div>
+                </div>
+            </section>
+
+            <!-- Giao diện Thêm Từ / Quản Lý Từ Vựng -->
+            <section id="vocab-page" class="vocab-page hidden">
+                <div class="vp-header">
+                    <button id="btn-close-vocab" class="vp-back"><i data-lucide="arrow-left"></i></button>
+                    <h2>Quản lý từ vựng</h2>
+                </div>
+
+                <!-- Stats 4 boxes -->
+                <div class="vp-stats">
+                    <div class="vp-stat-box">
+                        <div class="vpi-icon bg-blue"><i data-lucide="smartphone"></i></div>
+                        <div class="vp-info"><span>TỔNG</span><strong>0</strong></div>
+                    </div>
+                    <div class="vp-stat-box">
+                        <div class="vpi-icon bg-green"><i data-lucide="check-circle-2"></i></div>
+                        <div class="vp-info"><span>THUỘC</span><strong>0</strong></div>
+                    </div>
+                    <div class="vp-stat-box">
+                        <div class="vpi-icon bg-orange"><i data-lucide="clock"></i></div>
+                        <div class="vp-info"><span>CHƯA</span><strong>0</strong></div>
+                    </div>
+                    <div class="vp-stat-box">
+                        <div class="vpi-icon bg-pink"><i data-lucide="percent"></i></div>
+                        <div class="vp-info"><span>%</span><strong>0%</strong></div>
+                    </div>
+                </div>
+
+                <!-- Toolbar -->
+                <div class="vp-toolbar">
+                    <div class="vp-search-group">
+                        <div class="vp-search">
+                            <i data-lucide="search"></i>
+                            <input type="text" placeholder="Tìm từ...">
+                        </div>
+                        <div class="vp-select">
+                            <select>
+                                <option>Tất cả</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="vp-actions">
+                        <button id="btn-open-ai" class="vp-btn-ai"><i data-lucide="zap"></i> Thêm từ với AI</button>
+                        <button id="btn-open-multi" class="vp-btn-multi"><i data-lucide="layers"></i> Thêm nhiều từ</button>
+                    </div>
+                </div>
+
+                <!-- Data Table -->
+                <div class="vp-table">
+                    <div class="vp-thead">
+                        <div class="col-vocab"><i data-lucide="circle"></i> TỪ VỰNG</div>
+                        <div class="col-meaning">NGHĨA</div>
+                        <div class="col-type">LOẠI TỪ</div>
+                        <div class="col-example">VÍ DỤ</div>
+                        <div class="col-status">THUỘC</div>
+                    </div>
+                    <div class="vp-tbody empty-state">
+                        <i data-lucide="smartphone"></i>
+                        <p>Không có từ vựng nào</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- AI Modal -->
+    <div id="ai-modal" class="modal-overlay hidden">
+        <div class="modal-container ai-modal-content">
+            <div class="modal-header">
+                <div class="mh-title">
+                    <i data-lucide="zap" class="text-green"></i> 
+                    <h3>Tạo từ vựng với AI</h3>
+                </div>
+                <button id="btn-close-ai" class="btn-icon"><i data-lucide="x"></i></button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="ai-tabs">
+                    <button class="ai-tab active"><i data-lucide="type" class="icon-sm"></i> Nhập chủ đề</button>
+                    <button class="ai-tab"><i data-lucide="book-open" class="icon-sm"></i> Đọc hiểu</button>
+                    <button class="ai-tab"><i data-lucide="image" class="icon-sm"></i> Hình ảnh <span class="badge">BETA</span></button>
+                </div>
+                
+                <div class="ai-input-area">
+                    <textarea placeholder="Nhập chủ đề (VD: animals, technology) hoặc đoạn văn tiếng Anh để trích xuất từ vựng..."></textarea>
+                    <div class="char-count">0/1000</div>
+                </div>
+                
+                <div class="ai-hint">
+                    <i data-lucide="lightbulb" class="text-yellow"></i>
+                    <span>Nhập tên chủ đề để AI tạo từ vựng về chủ đề đó, hoặc nhập một đoạn văn tiếng Anh để AI trích xuất từ vựng quan trọng.</span>
+                </div>
+                
+                <button class="btn-primary-ai btn-neo-green">
+                    <i data-lucide="zap"></i> Tạo từ vựng với AI
+                </button>
+            </div>
+            
+            <div class="modal-footer">
+                <button id="btn-cancel-ai" class="btn-cancel">Hủy</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Multi Add Modal -->
+    <div id="multi-modal" class="modal-overlay hidden">
+        <div class="modal-container multi-modal-content">
+            <button id="btn-close-multi" class="btn-icon btn-close-top"><i data-lucide="x"></i></button>
+
+            <!-- Custom Header Content -->
+            <div class="multi-header">
+                <div class="mh-top">
+                    <span>Thêm vào bộ từ:</span>
+                    <select class="mh-select"><option>Bộ từ vựng của tôi</option></select>
+                    <button class="mh-btn-dark"><i data-lucide="plus"></i> Tạo mới</button>
+                </div>
+                <div class="mh-bottom">
+                    <button class="mh-btn-white"><i data-lucide="upload"></i> Nhập file <i data-lucide="chevron-down" class="icon-sm"></i></button>
+                    <button class="mh-btn-dark"><i data-lucide="help-circle"></i> Hướng dẫn</button>
+                    <button class="mh-btn-white"><i data-lucide="zap"></i> Thêm nhanh</button>
+                </div>
+            </div>
+
+            <!-- Table Input -->
+            <div class="multi-body">
+                <div class="multi-table">
+                    <div class="mt-head">
+                        <div class="col-n">#</div>
+                        <div class="col-2">TỪ VỰNG <span class="text-red">*</span></div>
+                        <div class="col-2">PHIÊN ÂM</div>
+                        <div class="col-3">NGHĨA <span class="text-red">*</span></div>
+                        <div class="col-2">LOẠI TỪ</div>
+                        <div class="col-3">VÍ DỤ</div>
+                        <div class="col-3">GHI CHÚ</div>
+                        <div class="col-a"></div>
+                    </div>
+                    <div class="mt-body">
+                        <div class="mt-row">
+                            <div class="col-n flex-center">1</div>
+                            <div class="col-2"><input type="text" placeholder="Hello"></div>
+                            <div class="col-2"><input type="text" placeholder="/hə'ləʊ/"></div>
+                            <div class="col-3"><input type="text" placeholder="Xin chào"></div>
+                            <div class="col-2"><input type="text" placeholder="noun"></div>
+                            <div class="col-3"><input type="text" placeholder="Hello world"></div>
+                            <div class="col-3"><input type="text" placeholder="Đồng/trái nghĩa..."></div>
+                            <div class="col-a flex-center"><button class="btn-icon"><i data-lucide="trash-2" class="icon-sm"></i></button></div>
+                        </div>
+                    </div>
+                    <button class="mt-add-row"><i data-lucide="plus"></i> Thêm dòng</button>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button id="btn-cancel-multi" class="btn-cancel">Hủy</button>
+                <button class="btn-neo-green">Lưu 0 từ</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
