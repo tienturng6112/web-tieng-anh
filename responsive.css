@@ -183,10 +183,11 @@ body {
     .logo-text { font-size: 1.7rem !important; }
 
     .streak-content {
-        flex-direction: column !important;
-        gap: 0.6rem !important;
+        gap: 0.75rem !important;
     }
-    .streak-days { flex-wrap: wrap !important; gap: 0.3rem !important; }
+    .streak-main-row { justify-content: flex-start !important; }
+    .streak-days { gap: 0.3rem !important; }
+    .day { height: 30px !important; font-size: 0.6rem !important; }
 
     .vp-stats { flex-wrap: wrap !important; gap: 0.65rem !important; }
     .vp-stat-box { flex: 1 1 calc(50% - 0.33rem) !important; min-width: 120px !important; }
@@ -294,13 +295,11 @@ body {
     /* Streak */
     .streak-card { padding: 1rem 1.1rem !important; }
     .streak-content {
-        flex-direction: row !important;
-        gap: 1rem !important;
-        align-items: center !important;
+        gap: 0.75rem !important;
     }
     .count-num { font-size: 2.1rem !important; }
-    .streak-days { flex-wrap: wrap !important; gap: 0.3rem !important; }
-    .day { width: 29px !important; height: 29px !important; font-size: 0.62rem !important; }
+    .streak-days { gap: 0.25rem !important; }
+    .day { height: 28px !important; font-size: 0.6rem !important; border-radius: 6px !important; }
 
     /* Quick 2-col */
     .quick-grid {
@@ -376,8 +375,8 @@ body {
     .stat-label { font-size: 0.68rem !important; }
 
     .count-num { font-size: 1.85rem !important; }
-    .day { width: 26px !important; height: 26px !important; font-size: 0.58rem !important; }
-    .streak-days { gap: 0.22rem !important; }
+    .day { height: 25px !important; font-size: 0.58rem !important; border-radius: 5px !important; }
+    .streak-days { gap: 0.2rem !important; }
 
     .quick-grid { gap: 0.45rem !important; }
     .quick-card { padding: 0.65rem !important; gap: 0.45rem !important; }
