@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
     // Nav menu items active state
     const navItems = document.querySelectorAll('.nav-item');
     navItems.forEach(item => {
@@ -105,19 +105,56 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(card);
     });
 
-    // Theme toggle mock interaction
+    // ===== THEME TOGGLE (Dark / Light) =====
     const modeToggle = document.querySelector('.mode');
+    const modeLabel = modeToggle ? modeToggle.querySelector('span') : null;
+
+    // Ham thay doi icon: xoa svg/i hien tai, tao <i> moi roi goi lucide.createIcons()
+    function setModeIcon(iconName) {
+        if (!modeToggle) return;
+        // Lucide doi <i> thanh <svg>, nen can tim ca 2
+        const existingIcon = modeToggle.querySelector('svg, i[data-lucide]');
+        const newI = document.createElement('i');
+        newI.setAttribute('data-lucide', iconName);
+        if (existingIcon) {
+            existingIcon.replaceWith(newI);
+        } else {
+            modeToggle.insertBefore(newI, modeLabel);
+        }
+        if (window.lucide) window.lucide.createIcons();
+    }
+
+    // Ap dung theme khi tai trang tu localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+        setModeIcon('moon');
+        if (modeLabel) modeLabel.innerText = 'Toi';
+        if (modeToggle) modeToggle.classList.add('is-light');
+    }
+    // Dam bao dark mode dung icon sun
+    else {
+        setModeIcon('sun');
+        if (modeLabel) modeLabel.innerText = 'Sang';
+    }
+
     if (modeToggle) {
         modeToggle.addEventListener('click', () => {
-            const isLight = document.body.style.backgroundColor === 'white';
-            if (isLight) {
-                document.body.style.backgroundColor = '';
-                document.body.style.color = '';
-                modeToggle.querySelector('span').innerText = 'Sáng';
+            const isCurrentlyLight = document.body.classList.contains('light-mode');
+            if (isCurrentlyLight) {
+                // Chuyen sang DARK
+                document.body.classList.remove('light-mode');
+                setModeIcon('sun');
+                if (modeLabel) modeLabel.innerText = 'Sang';
+                modeToggle.classList.remove('is-light');
+                localStorage.setItem('theme', 'dark');
             } else {
-                document.body.style.backgroundColor = 'white';
-                document.body.style.color = 'black';
-                modeToggle.querySelector('span').innerText = 'Tối';
+                // Chuyen sang LIGHT
+                document.body.classList.add('light-mode');
+                setModeIcon('moon');
+                if (modeLabel) modeLabel.innerText = 'Toi';
+                modeToggle.classList.add('is-light');
+                localStorage.setItem('theme', 'light');
             }
         });
     }
@@ -142,8 +179,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ===== Firebase setup cho Video/Hình ảnh Upload =====
-    // BƯỚC QUAN TRỌNG: Đã thêm Firebase Config thành công!
+    // ===== Firebase setup cho Video/HÃ¬nh áº£nh Upload =====
+    // BÆ¯á»šC QUAN TRá»ŒNG: ÄÃ£ thÃªm Firebase Config thÃ nh cÃ´ng!
     const firebaseConfig = {
         apiKey: "AIzaSyDnjTJDsdMODW7CDFs7ZxkcCOHY4FyrpHc",
         authDomain: "web-tieng-anh-d0e2d.firebaseapp.com",
@@ -157,27 +194,27 @@ document.addEventListener('DOMContentLoaded', () => {
     let storage = null;
     let db = null;
 
-    // Khởi tạo Firebase
+    // Khá»Ÿi táº¡o Firebase
     if (typeof firebase !== 'undefined') {
         firebase.initializeApp(firebaseConfig);
         db = firebase.firestore();
     }
 
-    // ===== Cấu hình Cloudinary (Để upload file miễn phí) =====
+    // ===== Cáº¥u hÃ¬nh Cloudinary (Äá»ƒ upload file miá»…n phÃ­) =====
     const CLOUDINARY_CLOUD_NAME = "dzutobhcm";
-    const CLOUDINARY_UPLOAD_PRESET = "web tiếng anh";
+    const CLOUDINARY_UPLOAD_PRESET = "web tiáº¿ng anh";
 
     const heroMediaUpload = document.getElementById('hero-media-upload');
     const heroMediaContainer = document.getElementById('hero-media-container');
     const muteToggleBtn = document.getElementById('mute-toggle-btn');
     const heroOverlay = document.querySelector('.hero-overlay');
     
-    // Hàm hiển thị hình ảnh / video
+    // HÃ m hiá»ƒn thá»‹ hÃ¬nh áº£nh / video
     function displayMedia(source, isFile = false) {
         let srcURL = isFile ? URL.createObjectURL(source) : source;
         heroMediaContainer.innerHTML = '';
         
-        // Kiểm tra loại video: nếu là file thì check type, nếu là link Cloudinary thì check đuôi file
+        // Kiá»ƒm tra loáº¡i video: náº¿u lÃ  file thÃ¬ check type, náº¿u lÃ  link Cloudinary thÃ¬ check Ä‘uÃ´i file
         const isVideo = isFile ? source.type.startsWith('video/') : (srcURL.match(/\.(mp4|webm|mov|ogg|m4v)/i) || srcURL.includes('/video/upload/'));
 
         if (isVideo) {
@@ -217,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Tải media đã lưu từ Firebase Firestore khi vừa vào web
+    // Táº£i media Ä‘Ã£ lÆ°u tá»« Firebase Firestore khi vá»«a vÃ o web
     async function loadSavedMedia() {
         if (!db) return;
         try {
@@ -230,28 +267,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         } catch (error) {
-            console.error("Lỗi khi tải dữ liệu từ Firebase:", error);
+            console.error("Lá»—i khi táº£i dá»¯ liá»‡u tá»« Firebase:", error);
         }
     }
 
     if (heroMediaUpload && heroMediaContainer) {
-        // Gọi hàm tải dữ liệu khi trang vừa mở
+        // Gá»i hÃ m táº£i dá»¯ liá»‡u khi trang vá»«a má»Ÿ
         if (db) loadSavedMedia();
 
         heroMediaUpload.addEventListener('change', async (event) => {
             const file = event.target.files[0];
             if (!file) return;
 
-            // 1. Hiển thị tạm ngay lập tức
+            // 1. Hiá»ƒn thá»‹ táº¡m ngay láº­p tá»©c
             displayMedia(file, true);
 
             try {
-                // Đổi hiển thị overlay thành Đang tải lên...
+                // Äá»•i hiá»ƒn thá»‹ overlay thÃ nh Äang táº£i lÃªn...
                 const oldOverlayHTML = heroOverlay.innerHTML;
-                heroOverlay.innerHTML = '<i data-lucide="loader-2"></i><span>Đang tải lên Cloud...</span>';
+                heroOverlay.innerHTML = '<i data-lucide="loader-2"></i><span>Äang táº£i lÃªn Cloud...</span>';
                 if (window.lucide) window.lucide.createIcons();
 
-                // 2. Upload file lên Cloudinary thông qua API (Không cần thư viện cầu kỳ)
+                // 2. Upload file lÃªn Cloudinary thÃ´ng qua API (KhÃ´ng cáº§n thÆ° viá»‡n cáº§u ká»³)
                 const formData = new FormData();
                 formData.append('file', file);
                 formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
@@ -266,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (data.secure_url) {
                     const downloadURL = data.secure_url;
                     
-                    // 3. Lưu link URL vào Firebase Firestore (Database)
+                    // 3. LÆ°u link URL vÃ o Firebase Firestore (Database)
                     if (db) {
                         await db.collection("settings").doc("heroSection").set({
                             mediaUrl: downloadURL,
@@ -274,22 +311,24 @@ document.addEventListener('DOMContentLoaded', () => {
                         });
                     }
 
-                    console.log("Upload thành công vĩnh viễn:", downloadURL);
+                    console.log("Upload thÃ nh cÃ´ng vÄ©nh viá»…n:", downloadURL);
                 } else {
-                    throw new Error(data.error ? data.error.message : "Upload thất bại");
+                    throw new Error(data.error ? data.error.message : "Upload tháº¥t báº¡i");
                 }
 
-                // Khôi phục lại giao diện nút
+                // KhÃ´i phá»¥c láº¡i giao diá»‡n nÃºt
                 heroOverlay.innerHTML = oldOverlayHTML;
                 if (window.lucide) window.lucide.createIcons();
                 
             } catch (error) {
-                console.error("Lỗi upload:", error);
-                alert("Lỗi khi tải file: " + error.message);
-                heroOverlay.innerHTML = '<i data-lucide="camera"></i><span>Thay đổi Ảnh / Video</span>';
+                console.error("Lá»—i upload:", error);
+                alert("Lá»—i khi táº£i file: " + error.message);
+                heroOverlay.innerHTML = '<i data-lucide="camera"></i><span>Thay Ä‘á»•i áº¢nh / Video</span>';
                 if (window.lucide) window.lucide.createIcons();
             }
         });
     }
 });
+
+
 

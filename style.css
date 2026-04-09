@@ -190,7 +190,7 @@ body {
     overflow: hidden;
 }
 
-/* Ánh sáng chạy ngang nút liên tục khi lướt */
+/* Ãnh sÃ¡ng cháº¡y ngang nÃºt liÃªn tá»¥c khi lÆ°á»›t */
 .mode::before {
     content: '';
     position: absolute;
@@ -216,7 +216,7 @@ body {
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Lúc mặt trời thì xoay và bự lên */
+/* LÃºc máº·t trá»i thÃ¬ xoay vÃ  bá»± lÃªn */
 .mode:hover i {
     transform: rotate(45deg) scale(1.15);
 }
@@ -225,7 +225,7 @@ body {
     transform: scale(0.92);
 }
 
-/* Trạng thái Tối (Nút sẽ báo hiệu đổi icon Mặt Trăng với màu Tím neon) */
+/* Tráº¡ng thÃ¡i Tá»‘i (NÃºt sáº½ bÃ¡o hiá»‡u Ä‘á»•i icon Máº·t TrÄƒng vá»›i mÃ u TÃ­m neon) */
 .mode.is-light {
     border-color: #a855f7;
     color: #d8b4fe;
@@ -238,7 +238,7 @@ body {
     box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
 }
 
-/* Lúc mặt trăng thì lây nhẹ sang hướng khác */
+/* LÃºc máº·t trÄƒng thÃ¬ lÃ¢y nháº¹ sang hÆ°á»›ng khÃ¡c */
 .mode.is-light:hover i {
     transform: rotate(-30deg) scale(1.15);
 }
@@ -247,9 +247,9 @@ body {
 .main-content {
     margin-left: var(--sidebar-width);
     flex: 1;
-    padding: 1rem 6rem; /* Tăng padding trái/phải từ 2rem lên 6rem */
+    padding: 1rem 6rem; /* TÄƒng padding trÃ¡i/pháº£i tá»« 2rem lÃªn 6rem */
     position: relative;
-    max-width: 1600px; /* Thêm max-width để tránh quá rộng trên màn hình siêu lớn */
+    max-width: 1600px; /* ThÃªm max-width Ä‘á»ƒ trÃ¡nh quÃ¡ rá»™ng trÃªn mÃ n hÃ¬nh siÃªu lá»›n */
     margin: 0 auto;
     margin-left: var(--sidebar-width);
 }
@@ -441,10 +441,10 @@ body {
     cursor: pointer;
 }
 
-.stat-box:nth-child(1) { --box-color: #3b82f6; --box-rgb: 59, 130, 246; } /* Xanh biển */
-.stat-box:nth-child(2) { --box-color: #a855f7; --box-rgb: 168, 85, 247; } /* Tím */
-.stat-box:nth-child(3) { --box-color: #10b881; --box-rgb: 16, 184, 129; } /* Xanh lá */
-.stat-box:nth-child(4) { --box-color: #ef4444; --box-rgb: 239, 68, 68; }   /* Đỏ */
+.stat-box:nth-child(1) { --box-color: #3b82f6; --box-rgb: 59, 130, 246; } /* Xanh biá»ƒn */
+.stat-box:nth-child(2) { --box-color: #a855f7; --box-rgb: 168, 85, 247; } /* TÃ­m */
+.stat-box:nth-child(3) { --box-color: #10b881; --box-rgb: 16, 184, 129; } /* Xanh lÃ¡ */
+.stat-box:nth-child(4) { --box-color: #ef4444; --box-rgb: 239, 68, 68; }   /* Äá» */
 
 .stat-box:hover {
     transform: translateY(-4px);
@@ -720,16 +720,16 @@ body {
     gap: 1.2rem;
     overflow-x: auto;
     margin-bottom: 1rem;
-    padding-bottom: 1rem; /* Tăng padding để có chỗ cho thanh cuộn */
-    /* Đã xóa scrollbar-width: none để hiện thanh cuộn Firefox */
+    padding-bottom: 1rem; /* TÄƒng padding Ä‘á»ƒ cÃ³ chá»— cho thanh cuá»™n */
+    /* ÄÃ£ xÃ³a scrollbar-width: none Ä‘á»ƒ hiá»‡n thanh cuá»™n Firefox */
     scrollbar-color: var(--accent-green) #1e293b;
     scrollbar-width: thin;
 }
 
-/* Tùy chỉnh thanh cuộn ngang cho Chrome/Safari */
+/* TÃ¹y chá»‰nh thanh cuá»™n ngang cho Chrome/Safari */
 .cards-scroll::-webkit-scrollbar {
     height: 6px;
-    display: block; /* Khôi phục hiển thị */
+    display: block; /* KhÃ´i phá»¥c hiá»ƒn thá»‹ */
 }
 
 .cards-scroll::-webkit-scrollbar-track {
@@ -769,7 +769,7 @@ body {
     font-size: 0.95rem;
     font-weight: 600;
     color: #fff;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.75rem;
     height: 4.5rem; /* Fixed height for up to 3 lines of text */
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -781,16 +781,17 @@ body {
 
 .course-meta {
     display: flex;
+    display: flex;
     align-items: center;
-    gap: 0.6rem;
-    font-size: 0.8rem;
+    gap: 0.5rem;
+    font-size: 0.85rem;
     color: #94a3b8;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .course-meta i {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     color: #94a3b8;
 }
 
@@ -830,7 +831,7 @@ body {
 }
 
 .scroll-progress {
-    display: none; /* Ẩn đi đường kẻ xanh lá giả */
+    display: none; /* áº¨n Ä‘i Ä‘Æ°á»ng káº» xanh lÃ¡ giáº£ */
     height: 2px;
     background: #1e293b;
     width: 100%;
@@ -1382,22 +1383,22 @@ body {
 .btn-neo-green:active { transform: translateY(2px); box-shadow: 0 0 0 #059669; }
 
 /* ========================================================= */
-/* --- LIGHT MODE TH�M V�O THEO Y�U C?U �? S�NG H?T UI ---   */
+/* --- LIGHT MODE THÊM VÀO THEO YÊU C?U Ð? SÁNG H?T UI ---   */
 /* ========================================================= */
 body.light-theme {
-    --bg-dark: #f8fafc;        /* M�u n?n s�ng d?u m?t */
+    --bg-dark: #f8fafc;        /* Màu n?n sáng d?u m?t */
     --sidebar-bg: #ffffff;     /* N?n menu tr?ng */
     --card-bg: #ffffff;        /* N?n th? tr?ng */
     --text-primary: #1e293b;   /* Ch? den ng? d?m (d? d?c) */
-    --text-secondary: #64748b; /* Ch? x�m nh?t */
-    --border-color: #e2e8f0;   /* Vi?n s�ng hon */
+    --text-secondary: #64748b; /* Ch? xám nh?t */
+    --border-color: #e2e8f0;   /* Vi?n sáng hon */
     
-    /* V?n gi? m�u nh?n */
+    /* V?n gi? màu nh?n */
     --accent-orange: #f59e0b;
     --accent-green: #10b881;
 }
 
-/* Ghi d� m�u n?n b? c? d?nh c?a c�c box den t?i */
+/* Ghi dè màu n?n b? c? d?nh c?a các box den t?i */
 body.light-theme .course-card {
     background: var(--card-bg);
 }
@@ -1423,7 +1424,7 @@ body.light-theme .nav-item:hover {
     background: rgba(0, 0, 0, 0.05);
 }
 
-/* --- TH�M B�NG M? (DROP SHADOW) CHO T?T C? BOX CHO D? NH�N --- */
+/* --- THÊM BÓNG M? (DROP SHADOW) CHO T?T C? BOX CHO D? NHÌN --- */
 body.light-theme .card,
 body.light-theme .stat-box,
 body.light-theme .streak-card,
@@ -1431,7 +1432,7 @@ body.light-theme .quick-card,
 body.light-theme .course-card,
 body.light-theme .sidebar {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06); 
-    border-color: rgba(0, 0, 0, 0.05); /* Vi?n m? m? thay v� g?t */
+    border-color: rgba(0, 0, 0, 0.05); /* Vi?n m? m? thay vì g?t */
 }
 
 body.light-theme .card:hover,
@@ -1439,11 +1440,11 @@ body.light-theme .stat-box:hover,
 body.light-theme .streak-card:hover,
 body.light-theme .quick-card:hover,
 body.light-theme .course-card:hover {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); /* B�ng to khi r� chu?t */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); /* Bóng to khi rê chu?t */
     transform: translateY(-4px);
 }
 
-/* �?i l?i m�u ch? b�n trong c�c box b? t?i */
+/* Ð?i l?i màu ch? bên trong các box b? t?i */
 body.light-theme .course-card h4 {
     color: var(--text-primary);
 }
@@ -1457,26 +1458,26 @@ body.light-theme .vocab-info {
     color: var(--text-secondary);
 }
 
-/* Mode Button trong Light mode ch?nh l?i t� b�ng */
+/* Mode Button trong Light mode ch?nh l?i tí bóng */
 body.light-theme .mode {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* �? b�ng nh? cho n�t mode d? nh�n tr�n n?n tr?ng */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Ð? bóng nh? cho nút mode d? nhìn trên n?n tr?ng */
     border-color: rgba(0,0,0,0.1);
 }
 
-/* Can ch?nh m�u n?n Custom scrollbar cho Lightmode */
+/* Can ch?nh màu n?n Custom scrollbar cho Lightmode */
 body.light-theme .cards-scroll::-webkit-scrollbar-track {
     background: #f1f5f9;
 }
 
 /* ========================================================= */
-/* --- C?P NH?T LIGHT MODE: �P S�NG TO�N B? WEBSITE ---      */
+/* --- C?P NH?T LIGHT MODE: ÉP SÁNG TOÀN B? WEBSITE ---      */
 /* ========================================================= */
 body.light-theme {
     background-color: #f8fafc !important;
     color: #0f172a !important;
 }
 
-/* SIDEBAR & MENU TR�I */
+/* SIDEBAR & MENU TRÁI */
 body.light-theme .sidebar {
     background-color: #ffffff !important;
     border-right: 1px solid #e2e8f0 !important;
@@ -1508,7 +1509,7 @@ body.light-theme .points span {
     color: #64748b !important;
 }
 
-/* N?N C�C KH?I B�N PH?I (CARDS) */
+/* N?N CÁC KH?I BÊN PH?I (CARDS) */
 body.light-theme .card,
 body.light-theme .stat-box,
 body.light-theme .course-card,
@@ -1524,7 +1525,7 @@ body.light-theme .streak-card {
     box-shadow: 0 4px 20px rgba(245, 158, 11, 0.08) !important;
 }
 
-/* TEXT TRONG C�C KH?I S�NG L�N */
+/* TEXT TRONG CÁC KH?I SÁNG LÊN */
 body.light-theme h3, 
 body.light-theme h4, 
 body.light-theme .stat-value,
@@ -1542,7 +1543,7 @@ body.light-theme .count-unit {
     color: #64748b !important;
 }
 
-/* C�C N�T (PILLS) L? TR�NH */
+/* CÁC NÚT (PILLS) L? TRÌNH */
 body.light-theme .pill {
     background-color: #f1f5f9 !important;
     color: #64748b !important;
@@ -1560,7 +1561,7 @@ body.light-theme .pill.active {
     border-color: #10b881 !important;
 }
 
-/* B�NG �? (SHADOWS) M?NH HON KHI R� CHU?T */
+/* BÓNG Ð? (SHADOWS) M?NH HON KHI RÊ CHU?T */
 body.light-theme .card:hover,
 body.light-theme .stat-box:hover,
 body.light-theme .streak-card:hover,
@@ -1568,4 +1569,795 @@ body.light-theme .quick-card:hover,
 body.light-theme .course-card:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
     transform: translateY(-4px) !important;
+}
+
+
+/* ===================================================================
+   LIGHT MODE THEME - Toggle bằng class 'light-mode' trên body
+   ================================================================== */
+
+body.light-mode {
+    background-color: #f0f2f5;
+    color: #1a202c;
+}
+
+/* Sidebar */
+body.light-mode .sidebar {
+    background-color: #ffffff;
+    border-right-color: #e2e8f0;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .nav-item {
+    color: #64748b;
+}
+
+body.light-mode .nav-item:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #1a202c;
+}
+
+body.light-mode .nav-item.active {
+    background: #f0fdf4;
+    color: #27ae60;
+    border-left-color: #27ae60;
+}
+
+body.light-mode .sidebar-footer {
+    border-top-color: #e2e8f0;
+}
+
+body.light-mode .user-name {
+    color: #1a202c;
+}
+
+body.light-mode .user-subtitle {
+    color: #64748b;
+}
+
+/* Main content background */
+body.light-mode .main-content {
+    background-color: #f0f2f5;
+}
+
+/* Cards */
+body.light-mode .card {
+    background-color: #ffffff;
+    border-color: #e2e8f0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+body.light-mode .stats-container .stat-box {
+    background-color: #ffffff;
+    border-color: #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+body.light-mode .stat-value {
+    color: #1a202c;
+}
+
+body.light-mode .stat-label {
+    color: #64748b;
+}
+
+/* Streak card */
+body.light-mode .streak-card {
+    background: linear-gradient(135deg, #f2994a, #f2c94c);
+}
+
+body.light-mode .streak-header {
+    color: #fff;
+}
+
+body.light-mode .streak-header span {
+    color: #fff;
+}
+
+body.light-mode .count-num {
+    color: #fff;
+}
+
+body.light-mode .count-unit {
+    color: rgba(255,255,255,0.85);
+}
+
+body.light-mode .day {
+    background: rgba(255,255,255,0.25);
+    color: #fff;
+    border-color: rgba(255,255,255,0.3);
+}
+
+body.light-mode .day.active {
+    background: #fff;
+    color: #f2994a;
+}
+
+/* Quick access cards */
+body.light-mode .quick-card {
+    background-color: #ffffff;
+    border-color: #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+body.light-mode .quick-card h3 {
+    color: #1a202c;
+}
+
+body.light-mode .quick-card p {
+    color: #64748b;
+}
+
+body.light-mode .quick-card .arrow {
+    color: #94a3b8;
+}
+
+/* Section titles */
+body.light-mode .section-title {
+    color: #1a202c;
+}
+
+/* Filter pills */
+body.light-mode .filter-pills .pill {
+    background: #ffffff;
+    color: #64748b;
+    border-color: #e2e8f0;
+}
+
+body.light-mode .filter-pills .pill:hover {
+    background: #f1f5f9;
+    color: #1a202c;
+}
+
+/* Course cards */
+body.light-mode .course-card {
+    background-color: #ffffff;
+    border-color: #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+body.light-mode .course-card h4 {
+    color: #1a202c;
+}
+
+body.light-mode .course-card .course-meta span {
+    color: #64748b;
+}
+
+body.light-mode .course-card .difficulty > span:first-child {
+    color: #64748b;
+}
+
+body.light-mode .diff-bar {
+    background: #e2e8f0;
+}
+
+/* Path headers */
+body.light-mode .path-header h3 {
+    color: #1a202c;
+}
+
+body.light-mode .path-header .count {
+    color: #64748b;
+}
+
+body.light-mode .path-header .vocab-info {
+    color: #64748b;
+}
+
+/* Top header */
+body.light-mode .top-header {
+    background-color: transparent;
+}
+
+body.light-mode .streak-badge {
+    background: rgba(242, 153, 74, 0.08);
+    border-color: rgba(242, 153, 74, 0.25);
+    color: #d97706;
+}
+
+/* Mode button - light state */
+body.light-mode .mode {
+    border-color: rgba(0, 0, 0, 0.15);
+    color: #1a202c;
+    background: rgba(0, 0, 0, 0.04);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+body.light-mode .mode:hover {
+    background: rgba(0, 0, 0, 0.08);
+    border-color: #f2c94c;
+    color: #b45309;
+    box-shadow: 0 4px 15px rgba(242, 201, 76, 0.2);
+}
+
+body.light-mode .points {
+    color: #1a202c;
+}
+
+/* Vocab management page */
+body.light-mode .vp-stat-box {
+    background-color: #ffffff;
+    border-color: #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+body.light-mode .vp-info span {
+    color: #64748b;
+}
+
+body.light-mode .vp-info strong {
+    color: #1a202c;
+}
+
+body.light-mode .vp-toolbar {
+    background-color: #ffffff;
+    border-color: #e2e8f0;
+}
+
+body.light-mode .vp-search input {
+    color: #1a202c;
+    background: transparent;
+}
+
+body.light-mode .vp-search input::placeholder {
+    color: #94a3b8;
+}
+
+body.light-mode .vp-search {
+    border-color: #e2e8f0;
+    background: #f8fafc;
+}
+
+body.light-mode .vp-select select {
+    color: #1a202c;
+    background: #f8fafc;
+    border-color: #e2e8f0;
+}
+
+body.light-mode .vp-table {
+    background-color: #ffffff;
+    border-color: #e2e8f0;
+}
+
+body.light-mode .vp-thead {
+    background: #f8fafc;
+    color: #64748b;
+    border-bottom-color: #e2e8f0;
+}
+
+body.light-mode .vp-header h2 {
+    color: #1a202c;
+}
+
+/* Modals */
+body.light-mode .modal-container {
+    background-color: #ffffff;
+    border-color: #e2e8f0;
+    color: #1a202c;
+}
+
+body.light-mode .modal-header {
+    border-bottom-color: #e2e8f0;
+}
+
+body.light-mode .modal-header h3 {
+    color: #1a202c;
+}
+
+body.light-mode .modal-container label {
+    color: #374151;
+}
+
+body.light-mode .modal-container input,
+body.light-mode .modal-container textarea,
+body.light-mode .modal-container select {
+    background: #f8fafc;
+    border-color: #e2e8f0;
+    color: #1a202c;
+}
+
+body.light-mode .modal-container input::placeholder,
+body.light-mode .modal-container textarea::placeholder {
+    color: #94a3b8;
+}
+
+/* Scroll progress bar */
+body.light-mode .scroll-progress {
+    background: #e2e8f0;
+}
+
+/* Smooth transition for ALL elements on theme change */
+body, body * {
+    transition-property: background-color, color, border-color, box-shadow;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+
+/* ===================================================================
+   BUG FIXES - 2026-04-09
+   ================================================================== */
+
+/* Fix 1: Hero overlay text luon phai mau trang bat ke light/dark mode
+   vi overlay co nen den rgba(0,0,0,0.6) */
+.hero-overlay {
+    color: #ffffff !important;
+}
+.hero-overlay span {
+    color: #ffffff !important;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+.hero-overlay i, .hero-overlay svg {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+}
+
+/* Fix 2: stat-value trong light mode phai giu mau neon (khong doi thanh den)
+   chi can doi mau label (phu), khong doi mau value chinh */
+body.light-mode .stat-value {
+    /* Giu mau neon goc - khong override */
+    color: var(--box-color) !important;
+}
+
+/* Fix 3: Trong dark mode, dam bao stat-box khong bi trang (reset khoi light-theme leak) */
+body:not(.light-mode) .stat-box {
+    background: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Fix 4: vp-stat-box border trong dark mode 
+   (CSS cu dung #fff border - ngan voi dark background) */
+body:not(.light-mode) .vp-stat-box {
+    border-color: var(--border-color) !important;
+}
+
+/* --- OVERRIDES CHO CARD TINH GỌN, ĐẸP MẮT --- */
+.course-card {
+    flex: 0 0 240px !important;
+    padding: 1.25rem 1.25rem 1rem 1.25rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 140px !important;
+    border-radius: 14px !important;
+}
+
+.course-card h4 {
+    height: 2.8rem !important;
+    -webkit-line-clamp: 2 !important;
+    line-clamp: 2 !important;
+    margin-bottom: 0.75rem !important;
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+}
+
+.course-meta {
+    margin-bottom: 0 !important;
+    gap: 0.5rem !important;
+}
+
+.course-meta i {
+    width: 16px !important;
+    height: 16px !important;
+}
+
+.difficulty {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.5rem !important;
+    padding-top: 0.75rem !important;
+    margin-top: auto !important;
+    border-top: 1px solid rgba(150, 150, 150, 0.1) !important;
+}
+
+body.light-mode .difficulty {
+    border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.difficulty span:first-child {
+    font-size: 0.65rem !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+}
+
+.diff-bar {
+    margin: 0 !important;
+    flex: 1 !important;
+}
+
+.difficulty .level {
+    margin-top: 0 !important;
+    white-space: nowrap !important;
+    font-size: 0.8rem !important;
+}
+
+
+/* =======================================================
+   RESPONSIVE DESIGN — TABLET & MOBILE
+   ======================================================= */
+
+/* -------------------------------------------------------
+   TABLET  <= 1024px
+   ------------------------------------------------------- */
+@media (max-width: 1024px) {
+    :root {
+        --sidebar-width: 200px;
+    }
+
+    .main-content {
+        padding: 1rem 2.5rem;
+        margin-left: var(--sidebar-width);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .hero-card {
+        grid-column: 1 / -1;
+    }
+
+    .hero-media-container img,
+    .hero-media-container video {
+        max-height: 240px;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quick-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .logo-text {
+        font-size: 1.8rem;
+    }
+
+    .streak-content {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: flex-start;
+    }
+
+    .streak-days {
+        gap: 0.3rem;
+        flex-wrap: wrap;
+    }
+
+    .vp-stats {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .vp-stat-box {
+        flex: 1 1 calc(50% - 0.75rem);
+        min-width: 140px;
+    }
+
+    .vp-toolbar {
+        flex-direction: column;
+        gap: 1rem;
+        border-radius: 20px;
+        align-items: flex-start;
+    }
+
+    .vp-search-group {
+        flex-wrap: wrap;
+    }
+}
+
+/* Hamburger button - chi hien tren mobile */
+.hamburger-btn {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 300;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.2s ease;
+}
+
+.hamburger-btn:hover {
+    background: var(--accent-green);
+    border-color: var(--accent-green);
+    color: #fff;
+}
+
+/* Overlay sidebar mobile */
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(2px);
+    z-index: 149;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Bottom nav - an tren desktop */
+.bottom-nav {
+    display: none;
+}
+
+.bn-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.6rem;
+    font-weight: 600;
+    padding: 0.4rem 0.75rem;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.bn-item svg, .bn-item i {
+    width: 22px;
+    height: 22px;
+}
+
+.bn-item.active {
+    color: var(--accent-green);
+}
+
+.bn-item.active svg, .bn-item.active i {
+    filter: drop-shadow(0 0 6px rgba(39,174,96,0.5));
+}
+
+/* -------------------------------------------------------
+   MOBILE  <= 768px
+   ------------------------------------------------------- */
+@media (max-width: 768px) {
+    :root {
+        --sidebar-width: 260px;
+    }
+
+    .hamburger-btn {
+        display: flex;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 200;
+        box-shadow: 4px 0 30px rgba(0,0,0,0.4);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0 !important;
+        padding: 1rem 1rem 5.5rem;
+    }
+
+    .top-header {
+        justify-content: flex-end;
+        padding-left: 3.5rem;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-card {
+        grid-column: auto;
+    }
+
+    .hero-media-container img,
+    .hero-media-container video {
+        max-height: 200px;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quick-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    .quick-card {
+        padding: 0.85rem;
+        gap: 0.75rem;
+    }
+
+    .quick-info h3 {
+        font-size: 0.85rem;
+    }
+
+    .quick-info p {
+        font-size: 0.7rem;
+    }
+
+    .section-title {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    .filter-pills {
+        padding: 0.4rem 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .course-card {
+        flex: 0 0 185px !important;
+    }
+
+    .streak-card {
+        padding: 1rem;
+    }
+
+    .count-num {
+        font-size: 2.5rem;
+    }
+
+    .streak-days {
+        flex-wrap: wrap;
+        gap: 0.35rem;
+    }
+
+    .day {
+        width: 28px;
+        height: 28px;
+        font-size: 0.65rem;
+    }
+
+    .header-right {
+        gap: 0.6rem;
+    }
+
+    .vocab-page {
+        padding: 1rem 1rem 5.5rem;
+    }
+
+    .vp-stats {
+        flex-wrap: wrap;
+        gap: 0.6rem;
+    }
+
+    .vp-stat-box {
+        flex: 1 1 calc(50% - 0.3rem);
+        min-width: 130px;
+        padding: 0.9rem;
+    }
+
+    .vp-toolbar {
+        flex-direction: column;
+        border-radius: 16px;
+        gap: 0.75rem;
+    }
+
+    .vp-search {
+        width: 100%;
+    }
+
+    .vp-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .modal-container {
+        width: 95%;
+        max-width: 100%;
+        border-radius: 16px;
+    }
+
+    .bottom-nav {
+        display: flex !important;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--sidebar-bg);
+        border-top: 1px solid var(--border-color);
+        z-index: 150;
+        height: 62px;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 0.5rem;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+    }
+
+    .collapse-btn {
+        display: none;
+    }
+}
+
+/* -------------------------------------------------------
+   SMALL MOBILE  <= 480px
+   ------------------------------------------------------- */
+@media (max-width: 480px) {
+    .main-content {
+        padding: 0.75rem 0.75rem 5.5rem;
+    }
+
+    .quick-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .quick-card {
+        padding: 0.75rem;
+        gap: 0.5rem;
+    }
+
+    .quick-icon-box {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .dashboard-grid {
+        gap: 0.75rem;
+    }
+
+    .stats-container {
+        gap: 0.5rem;
+    }
+
+    .stat-box {
+        padding: 0.75rem;
+    }
+
+    .stat-value {
+        font-size: 1.1rem;
+    }
+
+    .course-card {
+        flex: 0 0 160px !important;
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+    }
+
+    .vp-stat-box {
+        flex: 1 1 100%;
+    }
+
+    .modal-body {
+        padding: 1.25rem;
+    }
+}
+
+/* Light mode bottom nav */
+body.light-mode .bottom-nav,
+body.light-theme .bottom-nav {
+    background: #ffffff;
+    border-top-color: #e2e8f0;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
 }
