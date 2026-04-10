@@ -381,4 +381,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // HSA card logic is now handled by a direct link to course-detail.html in the HTML.
 });
