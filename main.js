@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     // Nav menu items active state
     const navItems = document.querySelectorAll('.nav-item');
     navItems.forEach(item => {
@@ -109,10 +109,8 @@
     const modeToggle = document.querySelector('.mode');
     const modeLabel = modeToggle ? modeToggle.querySelector('span') : null;
 
-    // Ham thay doi icon: xoa svg/i hien tai, tao <i> moi roi goi lucide.createIcons()
     function setModeIcon(iconName) {
         if (!modeToggle) return;
-        // Lucide doi <i> thanh <svg>, nen can tim ca 2
         const existingIcon = modeToggle.querySelector('svg, i[data-lucide]');
         const newI = document.createElement('i');
         newI.setAttribute('data-lucide', iconName);
@@ -131,9 +129,7 @@
         setModeIcon('moon');
         if (modeLabel) modeLabel.innerText = 'Toi';
         if (modeToggle) modeToggle.classList.add('is-light');
-    }
-    // Dam bao dark mode dung icon sun
-    else {
+    } else {
         setModeIcon('sun');
         if (modeLabel) modeLabel.innerText = 'Sang';
     }
@@ -142,14 +138,12 @@
         modeToggle.addEventListener('click', () => {
             const isCurrentlyLight = document.body.classList.contains('light-mode');
             if (isCurrentlyLight) {
-                // Chuyen sang DARK
                 document.body.classList.remove('light-mode');
                 setModeIcon('sun');
                 if (modeLabel) modeLabel.innerText = 'Sang';
                 modeToggle.classList.remove('is-light');
                 localStorage.setItem('theme', 'dark');
             } else {
-                // Chuyen sang LIGHT
                 document.body.classList.add('light-mode');
                 setModeIcon('moon');
                 if (modeLabel) modeLabel.innerText = 'Toi';
@@ -159,7 +153,7 @@
         });
     }
 
-    // Collapse sidebar interaction (Mock)
+    // Collapse sidebar interaction
     const collapseBtn = document.querySelector('.collapse-btn');
     const sidebar = document.querySelector('.sidebar');
     const mainContent = document.querySelector('.main-content');
@@ -179,8 +173,7 @@
         });
     }
 
-    // ===== Firebase setup cho Video/HÃ¬nh áº£nh Upload =====
-    // BÆ¯á»šC QUAN TRá»ŒNG: ÄÃ£ thÃªm Firebase Config thÃ nh cÃ´ng!
+    // ===== Firebase + Cloudinary Media Upload =====
     const firebaseConfig = {
         apiKey: "AIzaSyDnjTJDsdMODW7CDFs7ZxkcCOHY4FyrpHc",
         authDomain: "web-tieng-anh-d0e2d.firebaseapp.com",
@@ -191,31 +184,36 @@
         measurementId: "G-CN8C97CGJD"
     };
 
-    let storage = null;
     let db = null;
 
-    // Khá»Ÿi táº¡o Firebase
     if (typeof firebase !== 'undefined') {
-        firebase.initializeApp(firebaseConfig);
-        db = firebase.firestore();
+        try {
+            firebase.initializeApp(firebaseConfig);
+            db = firebase.firestore();
+        } catch(e) {
+            console.warn("Firebase init error:", e);
+        }
     }
 
-    // ===== Cáº¥u hÃ¬nh Cloudinary (Äá»ƒ upload file miá»…n phÃ­) =====
+    // ===== Cloudinary config =====
+    // LUU Y: ten upload preset phai khop voi ten trong Cloudinary dashboard (khong dau, khong khoang trang)
     const CLOUDINARY_CLOUD_NAME = "dzutobhcm";
-    const CLOUDINARY_UPLOAD_PRESET = "web tiáº¿ng anh";
+    const CLOUDINARY_UPLOAD_PRESET = "web tiếng anh"; // Ten preset chinh xac trong Cloudinary Dashboard
 
     const heroMediaUpload = document.getElementById('hero-media-upload');
     const heroMediaContainer = document.getElementById('hero-media-container');
     const muteToggleBtn = document.getElementById('mute-toggle-btn');
     const heroOverlay = document.querySelector('.hero-overlay');
-    
-    // HÃ m hiá»ƒn thá»‹ hÃ¬nh áº£nh / video
+
+    // Hien thi hinh anh hoac video vao hero section
     function displayMedia(source, isFile = false) {
+        if (!heroMediaContainer) return;
         let srcURL = isFile ? URL.createObjectURL(source) : source;
         heroMediaContainer.innerHTML = '';
-        
-        // Kiá»ƒm tra loáº¡i video: náº¿u lÃ  file thÃ¬ check type, náº¿u lÃ  link Cloudinary thÃ¬ check Ä‘uÃ´i file
-        const isVideo = isFile ? source.type.startsWith('video/') : (srcURL.match(/\.(mp4|webm|mov|ogg|m4v)/i) || srcURL.includes('/video/upload/'));
+
+        const isVideo = isFile
+            ? source.type.startsWith('video/')
+            : (srcURL.match(/\.(mp4|webm|mov|ogg|m4v)/i) || srcURL.includes('/video/upload/'));
 
         if (isVideo) {
             const video = document.createElement('video');
@@ -223,6 +221,7 @@
             video.autoplay = true;
             video.muted = true;
             video.loop = true;
+            video.playsInline = true;
             video.id = 'hero-video-element';
             heroMediaContainer.appendChild(video);
 
@@ -234,11 +233,13 @@
         } else {
             const img = document.createElement('img');
             img.src = srcURL;
+            img.alt = 'Hero';
             heroMediaContainer.appendChild(img);
             if (muteToggleBtn) muteToggleBtn.classList.add('hidden');
         }
     }
 
+    // Nut tat/bat am thanh video
     if (muteToggleBtn) {
         muteToggleBtn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -246,89 +247,138 @@
             const videoEl = document.getElementById('hero-video-element');
             if (videoEl) {
                 videoEl.muted = !videoEl.muted;
-                muteToggleBtn.innerHTML = videoEl.muted 
-                    ? '<i data-lucide="volume-x"></i>' 
+                muteToggleBtn.innerHTML = videoEl.muted
+                    ? '<i data-lucide="volume-x"></i>'
                     : '<i data-lucide="volume-2"></i>';
                 if (window.lucide) window.lucide.createIcons();
             }
         });
     }
 
-    // Táº£i media Ä‘Ã£ lÆ°u tá»« Firebase Firestore khi vá»«a vÃ o web
+    // Load media da luu khi mo trang
+    // Thu Firebase truoc, neu khong co thi dung localStorage lam backup
     async function loadSavedMedia() {
-        if (!db) return;
-        try {
-            const docRef = db.collection("settings").doc("heroSection");
-            const docSnap = await docRef.get();
-            if (docSnap.exists) {
-                const data = docSnap.data();
-                if (data.mediaUrl) {
-                    displayMedia(data.mediaUrl, false);
+        let loaded = false;
+
+        // 1. Thu load tu Firebase
+        if (db) {
+            try {
+                const docSnap = await db.collection("settings").doc("heroSection").get();
+                if (docSnap.exists) {
+                    const data = docSnap.data();
+                    if (data && data.mediaUrl) {
+                        displayMedia(data.mediaUrl, false);
+                        localStorage.setItem('heroMediaUrl', data.mediaUrl); // dong bo localStorage
+                        loaded = true;
+                    }
                 }
+            } catch (err) {
+                console.warn("Firebase load that bai, dung localStorage backup:", err);
             }
-        } catch (error) {
-            console.error("Lá»—i khi táº£i dá»¯ liá»‡u tá»« Firebase:", error);
+        }
+
+        // 2. Neu Firebase khong co, fallback sang localStorage
+        if (!loaded) {
+            const localUrl = localStorage.getItem('heroMediaUrl');
+            if (localUrl) {
+                displayMedia(localUrl, false);
+            }
         }
     }
 
     if (heroMediaUpload && heroMediaContainer) {
-        // Gá»i hÃ m táº£i dá»¯ liá»‡u khi trang vá»«a má»Ÿ
-        if (db) loadSavedMedia();
+        // Goi ham load media khi trang mo
+        loadSavedMedia();
 
         heroMediaUpload.addEventListener('change', async (event) => {
             const file = event.target.files[0];
             if (!file) return;
 
-            // 1. Hiá»ƒn thá»‹ táº¡m ngay láº­p tá»©c
+            // 1. Hien thi tam ngay lap tuc (blob URL)
             displayMedia(file, true);
 
-            try {
-                // Äá»•i hiá»ƒn thá»‹ overlay thÃ nh Äang táº£i lÃªn...
-                const oldOverlayHTML = heroOverlay.innerHTML;
-                heroOverlay.innerHTML = '<i data-lucide="loader-2"></i><span>Äang táº£i lÃªn Cloud...</span>';
-                if (window.lucide) window.lucide.createIcons();
+            const oldOverlayHTML = heroOverlay ? heroOverlay.innerHTML : '';
 
-                // 2. Upload file lÃªn Cloudinary thÃ´ng qua API (KhÃ´ng cáº§n thÆ° viá»‡n cáº§u ká»³)
+            try {
+                if (heroOverlay) {
+                    heroOverlay.innerHTML = '<i data-lucide="loader-2"></i><span>Dang tai len...</span>';
+                    if (window.lucide) window.lucide.createIcons();
+                }
+
+                // 2. Upload len Cloudinary
                 const formData = new FormData();
                 formData.append('file', file);
                 formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
 
-                const response = await fetch(`https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/auto/upload`, {
-                    method: 'POST',
-                    body: formData
-                });
+                const response = await fetch(
+                    `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/auto/upload`,
+                    { method: 'POST', body: formData }
+                );
 
                 const data = await response.json();
-                
+
                 if (data.secure_url) {
                     const downloadURL = data.secure_url;
-                    
-                    // 3. LÆ°u link URL vÃ o Firebase Firestore (Database)
+
+                    // 3. Luu vao localStorage ngay (luon hoat dong du Firebase co loi)
+                    localStorage.setItem('heroMediaUrl', downloadURL);
+
+                    // 4. Luu vao Firebase (neu co)
                     if (db) {
-                        await db.collection("settings").doc("heroSection").set({
-                            mediaUrl: downloadURL,
-                            updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-                        });
+                        try {
+                            await db.collection("settings").doc("heroSection").set({
+                                mediaUrl: downloadURL,
+                                updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                            });
+                        } catch (fbErr) {
+                            console.warn("Firebase luu that bai (da backup localStorage):", fbErr);
+                        }
                     }
 
-                    console.log("Upload thÃ nh cÃ´ng vÄ©nh viá»…n:", downloadURL);
+                    // Hien thi media tu URL cloud (thay the blob URL tam)
+                    displayMedia(downloadURL, false);
+                    console.log("Upload thanh cong:", downloadURL);
+
                 } else {
-                    throw new Error(data.error ? data.error.message : "Upload tháº¥t báº¡i");
+                    throw new Error(
+                        data.error
+                            ? data.error.message
+                            : "Upload that bai. Kiem tra lai ten Upload Preset trong Cloudinary."
+                    );
                 }
 
-                // KhÃ´i phá»¥c láº¡i giao diá»‡n nÃºt
-                heroOverlay.innerHTML = oldOverlayHTML;
-                if (window.lucide) window.lucide.createIcons();
-                
+                // Khoi phuc overlay
+                if (heroOverlay) {
+                    heroOverlay.innerHTML = oldOverlayHTML;
+                    if (window.lucide) window.lucide.createIcons();
+                }
+
             } catch (error) {
-                console.error("Lá»—i upload:", error);
-                alert("Lá»—i khi táº£i file: " + error.message);
-                heroOverlay.innerHTML = '<i data-lucide="camera"></i><span>Thay Ä‘á»•i áº¢nh / Video</span>';
-                if (window.lucide) window.lucide.createIcons();
+                console.error("Loi upload Cloudinary:", error);
+
+                // Neu Cloudinary that bai -> luu base64 vao localStorage lam backup cuoi cung
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const base64 = e.target.result;
+                    if (base64.length < 5 * 1024 * 1024) { // gioi han 5MB
+                        localStorage.setItem('heroMediaUrl', base64);
+                        console.log("Da luu base64 vao localStorage lam backup.");
+                    } else {
+                        console.warn("File qua lon de luu localStorage. Fix ten Upload Preset Cloudinary.");
+                    }
+                };
+                reader.readAsDataURL(file);
+
+                alert(
+                    "Loi upload: " + error.message +
+                    "\n\nHay kiem tra ten Upload Preset trong Cloudinary Dashboard cua ban."
+                );
+
+                if (heroOverlay) {
+                    heroOverlay.innerHTML = '<i data-lucide="camera"></i><span>Thay doi Anh / Video</span>';
+                    if (window.lucide) window.lucide.createIcons();
+                }
             }
         });
     }
 });
-
-
-
