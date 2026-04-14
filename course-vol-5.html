@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bộ Vol 5 | Ma Đạo Tông Sư</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Philosopher:ital,wght@1,700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <style>
+        .subset-index-circle {
+            width: 44px;
+            height: 44px;
+            background: #252a35;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #94a3b8;
+            flex-shrink: 0;
+        }
+        .subset-card.locked .subset-index-circle {
+            background: #252a35;
+            color: #64748b;
+        }
+        .icon-inline {
+            width: 14px;
+            height: 14px;
+            vertical-align: middle;
+            margin-right: 4px;
+            margin-top: -2px;
+            color: #f2c94c;
+        }
+        .cd-badge.percent-purple {
+            background: rgba(168, 85, 247, 0.1);
+            color: #a855f7;
+        }
+        .yellow-shadow {
+            box-shadow: 0 8px 16px rgba(242, 201, 76, 0.3) !important;
+            background: linear-gradient(135deg, #f2c94c, #f59e0b) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <span class="logo-text">Ma Đạo Tông Sư</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <i data-lucide="home"></i>
+                    <span>Trang chủ</span>
+                </a>
+                <a href="#" class="nav-item active">
+                    <i data-lucide="layers"></i>
+                    <span>Bộ từ vựng</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="book-open"></i>
+                    <span>Từ vựng</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="gamepad-2"></i>
+                    <span>Game phản xạ</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="shopping-bag"></i>
+                    <span>Cửa hàng</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="bar-chart-2"></i>
+                    <span>Xếp hạng</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="collapse-btn">
+                    <i data-lucide="chevrons-left"></i>
+                </button>
+                <div class="user-profile">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=user1" alt="Avatar" class="avatar">
+                    <div class="user-info">
+                        <span class="user-name">Trung Tien Tr...</span>
+                    </div>
+                </div>
+                <div class="theme-toggle">
+                    <div class="points">
+                        <i data-lucide="coins" class="coin-icon"></i>
+                        <span>110</span>
+                    </div>
+                    <div class="mode">
+                        <i data-lucide="sun"></i>
+                        <span>Sáng</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-right">
+                    <div class="streak-badge">
+                        <i data-lucide="flame"></i>
+                        <span>1</span>
+                    </div>
+                    <button class="upgrade-btn">
+                        <i data-lucide="zap"></i>
+                        NÂNG CẤP PRO
+                    </button>
+                </div>
+            </header>
+
+            <!-- Course Detail View -->
+            <div class="course-detail-page">
+                <div class="cd-header">
+                    <div class="cd-header-left">
+                        <a href="index.html" class="cd-back-btn" title="Quay lại">
+                            <i data-lucide="arrow-left"></i>
+                        </a>
+                        <div class="cd-title-group">
+                            <div class="cd-icon-box yellow-shadow">
+                                <i data-lucide="book"></i>
+                            </div>
+                            <div class="cd-info-main">
+                                <h2>📚 Bộ Vol 5</h2>
+                                <div class="cd-badges">
+                                    <span class="cd-badge"><i data-lucide="layers"></i> 30 bộ từ</span>
+                                    <span class="cd-badge light"><i data-lucide="book"></i> 1324 từ vựng</span>
+                                    <span class="cd-badge percent-purple">0% hoàn thành</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cd-header-right">
+                        <div class="cd-actions-secondary">
+                            <button class="btn-cd-secondary"><i data-lucide="pin" class="icon-sm"></i> Ghim</button>
+                            <button class="btn-cd-secondary"><i data-lucide="award" class="icon-sm"></i> BXH</button>
+                        </div>
+                        <button class="btn-cd-primary glow-cyan">
+                            <i data-lucide="clock"></i> Học ngắt quãng
+                        </button>
+                    </div>
+                </div>
+
+                <div class="cd-progress-section">
+                    <div class="cd-progress-info">
+                        Tiến độ: <span class="white-text">0/1324 từ</span>
+                    </div>
+                    <div class="cd-progress-bar-container">
+                        <div class="cd-progress-bar-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div class="subset-section">
+                    <div class="subset-header">
+                        <h3>Các bộ từ</h3>
+                        <button class="btn-unlock-pro">
+                            <i data-lucide="crown"></i> Mở khóa
+                        </button>
+                    </div>
+                    <div class="subset-grid" id="subset-grid">
+                        <!-- Unit 1 -->
+                        <div class="subset-card active">
+                            <div class="subset-card-left">
+                                <div class="subset-icon-wrapper">📁</div>
+                                <div class="subset-index">#1</div>
+                            </div>
+                            <div class="subset-card-middle">
+                                <h4>T1: Reading Passage 1</h4>
+                                <div class="subset-stats-row">
+                                    <span class="subset-words">0 / 42 từ</span>
+                                    <span class="subset-percent">0%</span>
+                                </div>
+                                <div class="subset-progress-bar">
+                                    <div class="subset-progress-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="subset-card-right">
+                                <div class="subset-play-action">
+                                    <i data-lucide="play"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // Data for units 2-30
+        const units = [
+            { id: 2, name: "T1: Reading Passage 2", words: 16 },
+            { id: 3, name: "T1: Reading Passage 3", words: 12 },
+            { id: 4, name: "T2: Reading Passage 1", words: 56 },
+            { id: 5, name: "T2: Reading Passage 2", words: 52 },
+            { id: 6, name: "T2: Reading Passage 3", words: 36 },
+            { id: 7, name: "T3: Reading Passage 1", words: 34 },
+            { id: 8, name: "T3: Reading Passage 2", words: 53 },
+            { id: 9, name: "T3: Reading Passage 3", words: 41 },
+            { id: 10, name: "T4: Reading Passage 1", words: 56 },
+            { id: 11, name: "T4: Reading Passage 2", words: 51 },
+            { id: 12, name: "T4: Reading Passage 3", words: 39 },
+            { id: 13, name: "T5: Reading Passage 1", words: 42 },
+            { id: 14, name: "T5: Reading Passage 2", words: 47 },
+            { id: 15, name: "T5: Reading Passage 3", words: 42 },
+            { id: 16, name: "T6: Reading Passage 1", words: 43 },
+            { id: 17, name: "T6: Reading Passage 2", words: 48 },
+            { id: 18, name: "T6: Reading Passage 3", words: 57 },
+            { id: 19, name: "T7: Reading Passage 1", words: 48 },
+            { id: 20, name: "T7: Reading Passage 2", words: 40 },
+            { id: 21, name: "T7: Reading Passage 3", words: 40 },
+            { id: 22, name: "T8: Reading Passage 1", words: 53 },
+            { id: 23, name: "T8: Reading Passage 2", words: 55 },
+            { id: 24, name: "T8: Reading Passage 3", words: 50 },
+            { id: 25, name: "T9: Reading Passage 1", words: 46 },
+            { id: 26, name: "T9: Reading Passage 2", words: 44 },
+            { id: 27, name: "T9: Reading Passage 3", words: 48 },
+            { id: 28, name: "T10: Reading Passage 1", words: 37 },
+            { id: 29, name: "T10: Reading Passage 2", words: 45 },
+            { id: 30, name: "T10: Reading Passage 3", words: 51 }
+        ];
+
+        const grid = document.getElementById('subset-grid');
+        
+        units.forEach(unit => {
+            const card = document.createElement('div');
+            card.className = 'subset-card locked';
+            card.innerHTML = `
+                <div class="subset-card-left">
+                    <div class="subset-index-circle">#${unit.id}</div>
+                </div>
+                <div class="subset-card-middle">
+                    <h4><i data-lucide="lock" class="icon-inline"></i> ${unit.name}</h4>
+                    <div class="subset-stats-row">
+                        <span class="subset-words">${unit.words} từ</span>
+                    </div>
+                </div>
+                <span class="pro-badge-small">PRO</span>
+            `;
+            grid.appendChild(card);
+        });
+
+        lucide.createIcons();
+    </script>
+</body>
+</html>
