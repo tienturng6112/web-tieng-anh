@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B1 (4.0-5.0) | Ma Đạo Tông Sư</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Philosopher:ital,wght@1,700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../responsive.css">
+    <style>
+        .subset-index-circle { width:44px;height:44px;background:#252a35;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;color:#94a3b8;flex-shrink:0; }
+        .subset-card.locked .subset-index-circle { background:#252a35;color:#64748b; }
+        .icon-inline { width:14px;height:14px;vertical-align:middle;margin-right:4px;margin-top:-2px;color:#f59e0b; }
+        .cd-badge.percent-purple { background:rgba(168,85,247,0.1);color:#a855f7; }
+        .amber-shadow { box-shadow:0 8px 16px rgba(245,158,11,0.3) !important;background:linear-gradient(135deg,#f59e0b,#d97706) !important; }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo"><span class="logo-text">Ma Đạo Tông Sư</span></div>
+            <nav class="nav-menu">
+                <a href="../index.html" class="nav-item"><i data-lucide="home"></i><span>Trang chủ</span></a>
+                <a href="#" class="nav-item active"><i data-lucide="layers"></i><span>Bộ từ vựng</span></a>
+                <a href="#" class="nav-item"><i data-lucide="book-open"></i><span>Từ vựng</span></a>
+                <a href="#" class="nav-item"><i data-lucide="gamepad-2"></i><span>Game phản xạ</span></a>
+                <a href="#" class="nav-item"><i data-lucide="shopping-bag"></i><span>Cửa hàng</span></a>
+                <a href="#" class="nav-item"><i data-lucide="bar-chart-2"></i><span>Xếp hạng</span></a>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="collapse-btn"><i data-lucide="chevrons-left"></i></button>
+                <div class="user-profile">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=user1" alt="Avatar" class="avatar">
+                    <div class="user-info"><span class="user-name">Trung Tien Tr...</span></div>
+                </div>
+                <div class="theme-toggle">
+                    <div class="points"><i data-lucide="coins" class="coin-icon"></i><span>110</span></div>
+                    <div class="mode"><i data-lucide="sun"></i><span>Sáng</span></div>
+                </div>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-right">
+                    <div class="streak-badge"><i data-lucide="flame"></i><span>1</span></div>
+                    <button class="upgrade-btn"><i data-lucide="zap"></i> NÂNG CẤP PRO</button>
+                </div>
+            </header>
+            <div class="course-detail-page">
+                <div class="cd-header">
+                    <div class="cd-header-left">
+                        <a href="../index.html" class="cd-back-btn" title="Quay lại"><i data-lucide="arrow-left"></i></a>
+                        <div class="cd-title-group">
+                            <div class="cd-icon-box amber-shadow"><i data-lucide="book"></i></div>
+                            <div class="cd-info-main">
+                                <h2>📚 B1 (4.0-5.0)</h2>
+                                <div class="cd-badges">
+                                    <span class="cd-badge"><i data-lucide="layers"></i> 57 bộ từ</span>
+                                    <span class="cd-badge light"><i data-lucide="book"></i> 1786 từ vựng</span>
+                                    <span class="cd-badge percent-purple">0% hoàn thành</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cd-header-right">
+                        <div class="cd-actions-secondary">
+                            <button class="btn-cd-secondary"><i data-lucide="pin" class="icon-sm"></i> Ghim</button>
+                            <button class="btn-cd-secondary"><i data-lucide="award" class="icon-sm"></i> BXH</button>
+                        </div>
+                        <button class="btn-cd-primary glow-cyan"><i data-lucide="clock"></i> Học ngắt quãng</button>
+                    </div>
+                </div>
+                <div class="cd-progress-section">
+                    <div class="cd-progress-info">Tiến độ: <span class="white-text">0/1786 từ</span></div>
+                    <div class="cd-progress-bar-container"><div class="cd-progress-bar-fill" style="width:0%"></div></div>
+                </div>
+                <div class="subset-section">
+                    <div class="subset-header">
+                        <h3>Các bộ từ</h3>
+                        <button class="btn-unlock-pro"><i data-lucide="crown"></i> Mở khóa</button>
+                    </div>
+                    <div class="subset-grid" id="subset-grid">
+                        <!-- Card 1 - Active -->
+                        <div class="subset-card active">
+                            <div class="subset-card-left">
+                                <div class="subset-icon-wrapper">📁</div>
+                                <div class="subset-index">#1</div>
+                            </div>
+                            <div class="subset-card-middle">
+                                <h4>1. Báo chí & Truyền thông</h4>
+                                <div class="subset-stats-row">
+                                    <span class="subset-words">0 / 35 từ</span>
+                                    <span class="subset-percent">0%</span>
+                                </div>
+                                <div class="subset-progress-bar"><div class="subset-progress-fill" style="width:0%"></div></div>
+                            </div>
+                            <div class="subset-card-right">
+                                <div class="subset-play-action"><i data-lucide="play"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        lucide.createIcons();
+        const units = [
+            { id: 2, name: "Các giai đoạn của cuộc sống", words: 25 },
+            { id: 3, name: "Các lĩnh vực nghiên cứu", words: 26 },
+            { id: 4, name: "Các vấn đề xã hội", words: 33 },
+            { id: 5, name: "Chiến tranh & Hoà bình", words: 30 },
+            { id: 6, name: "Cơ thể con người", words: 24 },
+            { id: 7, name: "Dịp đặc biệt", words: 28 },
+            { id: 8, name: "Doanh nghiệp & Nơi làm việc", words: 39 },
+            { id: 9, name: "Du lịch & Kỳ nghỉ", words: 34 },
+            { id: 10, name: "Gia đình & Các mối quan hệ", words: 31 },
+            { id: 11, name: "Giáo dục", words: 33 },
+            { id: 12, name: "Internet & Trang web", words: 29 },
+            { id: 13, name: "Khái niệm trừu tượng", words: 39 },
+            { id: 14, name: "Lãng mạn", words: 26 },
+            { id: 15, name: "Luật & Chính Trị", words: 37 },
+            { id: 16, name: "Máy tính", words: 29 },
+            { id: 17, name: "Mỹ thuật", words: 25 },
+            { id: 18, name: "Môi trường & Năng lượng", words: 38 },
+            { id: 19, name: "Nghề nghiệp", words: 31 },
+            { id: 20, name: "Nhà & Toà Nhà", words: 27 },
+            { id: 21, name: "Nông nghiệp", words: 23 },
+            { id: 22, name: "Phim & Rap phim", words: 34 },
+            { id: 23, name: "Số lượng & Thùng chứa", words: 41 },
+            { id: 24, name: "Sở thích", words: 24 },
+            { id: 25, name: "Sức khoẻ & Bệnh tật", words: 36 },
+            { id: 26, name: "Thành công & Thất bại 1", words: 30 },
+            { id: 27, name: "Thành công & Thất bại 2", words: 26 },
+            { id: 28, name: "Thành phố & Nông thôn", words: 29 },
+            { id: 29, name: "Thiên nhiên & Khu vực", words: 25 },
+            { id: 30, name: "Thịt & Sữa", words: 29 },
+            { id: 31, name: "Thể thao & Người chơi", words: 34 },
+            { id: 32, name: "Thời gian", words: 40 },
+            { id: 33, name: "Thời tiết", words: 33 },
+            { id: 34, name: "Thời trang", words: 30 },
+            { id: 35, name: "Thực phẩm & Chế độ ăn uống", words: 31 },
+            { id: 36, name: "Tiền & Mua sắm", words: 37 },
+            { id: 37, name: "Tình cảm & Cảm xúc", words: 40 },
+            { id: 38, name: "Tính từ 1", words: 36 },
+            { id: 39, name: "Tính từ 2", words: 35 },
+            { id: 40, name: "Trái cây", words: 25 },
+            { id: 41, name: "Trạng từ & Giới từ", words: 37 },
+            { id: 42, name: "Trạng từ chung 1", words: 30 },
+            { id: 43, name: "Trạng từ chung 2", words: 27 },
+            { id: 44, name: "Trò chơi & Đồ chơi", words: 30 },
+            { id: 45, name: "Tôn giáo & Lễ hội", words: 34 },
+            { id: 46, name: "Vẻ bề ngoài", words: 32 },
+            { id: 47, name: "Vận chuyển", words: 33 },
+            { id: 48, name: "Văn chương", words: 28 },
+            { id: 49, name: "Vương quốc động vật", words: 35 },
+            { id: 50, name: "Âm nhạc", words: 28 },
+            { id: 51, name: "Đồ gia dụng & Nội thất", words: 25 },
+            { id: 52, name: "Đồ uống", words: 28 },
+            { id: 53, name: "Động từ cần thiết 1", words: 36 },
+            { id: 54, name: "Động từ cần thiết 2", words: 36 },
+            { id: 55, name: "Động từ cần thiết 3", words: 33 },
+            { id: 56, name: "Đặc điểm cá nhân 1", words: 30 },
+            { id: 57, name: "Đặc điểm cá nhân 2", words: 27 }
+        ];
+        const grid = document.getElementById('subset-grid');
+        units.forEach(unit => {
+            const card = document.createElement('div');
+            card.className = 'subset-card locked';
+            card.innerHTML = `
+                <div class="subset-card-left"><div class="subset-index-circle">${unit.id}</div></div>
+                <div class="subset-card-middle">
+                    <h4><i data-lucide="lock" class="icon-inline"></i> ${unit.id}. ${unit.name}</h4>
+                    <div class="subset-stats-row"><span class="subset-words">${unit.words} từ</span></div>
+                </div>
+                <span class="pro-badge-small">PRO</span>
+            `;
+            grid.appendChild(card);
+        });
+        lucide.createIcons();
+    </script>
+</body>
+</html>

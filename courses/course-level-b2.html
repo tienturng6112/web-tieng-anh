@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2 (5.5-6.5) | Ma Đạo Tông Sư</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Philosopher:ital,wght@1,700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../responsive.css">
+    <style>
+        .subset-index-circle { width:44px;height:44px;background:#252a35;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;color:#94a3b8;flex-shrink:0; }
+        .subset-card.locked .subset-index-circle { background:#252a35;color:#64748b; }
+        .icon-inline { width:14px;height:14px;vertical-align:middle;margin-right:4px;margin-top:-2px;color:#f2994a; }
+        .cd-badge.percent-purple { background:rgba(168,85,247,0.1);color:#a855f7; }
+        .orange-shadow { box-shadow:0 8px 16px rgba(249,115,22,0.3) !important;background:linear-gradient(135deg,#f97316,#ea580c) !important; }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo"><span class="logo-text">Ma Đạo Tông Sư</span></div>
+            <nav class="nav-menu">
+                <a href="../index.html" class="nav-item"><i data-lucide="home"></i><span>Trang chủ</span></a>
+                <a href="#" class="nav-item active"><i data-lucide="layers"></i><span>Bộ từ vựng</span></a>
+                <a href="#" class="nav-item"><i data-lucide="book-open"></i><span>Từ vựng</span></a>
+                <a href="#" class="nav-item"><i data-lucide="gamepad-2"></i><span>Game phản xạ</span></a>
+                <a href="#" class="nav-item"><i data-lucide="shopping-bag"></i><span>Cửa hàng</span></a>
+                <a href="#" class="nav-item"><i data-lucide="bar-chart-2"></i><span>Xếp hạng</span></a>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="collapse-btn"><i data-lucide="chevrons-left"></i></button>
+                <div class="user-profile">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=user1" alt="Avatar" class="avatar">
+                    <div class="user-info"><span class="user-name">Trung Tien Tr...</span></div>
+                </div>
+                <div class="theme-toggle">
+                    <div class="points"><i data-lucide="coins" class="coin-icon"></i><span>110</span></div>
+                    <div class="mode"><i data-lucide="sun"></i><span>Sáng</span></div>
+                </div>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-right">
+                    <div class="streak-badge"><i data-lucide="flame"></i><span>1</span></div>
+                    <button class="upgrade-btn"><i data-lucide="zap"></i> NÂNG CẤP PRO</button>
+                </div>
+            </header>
+            <div class="course-detail-page">
+                <div class="cd-header">
+                    <div class="cd-header-left">
+                        <a href="../index.html" class="cd-back-btn" title="Quay lại"><i data-lucide="arrow-left"></i></a>
+                        <div class="cd-title-group">
+                            <div class="cd-icon-box orange-shadow"><i data-lucide="book"></i></div>
+                            <div class="cd-info-main">
+                                <h2>📚 B2 (5.5-6.5)</h2>
+                                <div class="cd-badges">
+                                    <span class="cd-badge"><i data-lucide="layers"></i> 64 bộ từ</span>
+                                    <span class="cd-badge light"><i data-lucide="book"></i> 2114 từ vựng</span>
+                                    <span class="cd-badge percent-purple">0% hoàn thành</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cd-header-right">
+                        <div class="cd-actions-secondary">
+                            <button class="btn-cd-secondary"><i data-lucide="pin" class="icon-sm"></i> Ghim</button>
+                            <button class="btn-cd-secondary"><i data-lucide="award" class="icon-sm"></i> BXH</button>
+                        </div>
+                        <button class="btn-cd-primary glow-cyan"><i data-lucide="clock"></i> Học ngắt quãng</button>
+                    </div>
+                </div>
+                <div class="cd-progress-section">
+                    <div class="cd-progress-info">Tiến độ: <span class="white-text">0/2114 từ</span></div>
+                    <div class="cd-progress-bar-container"><div class="cd-progress-bar-fill" style="width:0%"></div></div>
+                </div>
+                <div class="subset-section">
+                    <div class="subset-header">
+                        <h3>Các bộ từ</h3>
+                        <button class="btn-unlock-pro"><i data-lucide="crown"></i> Mở khóa</button>
+                    </div>
+                    <div class="subset-grid" id="subset-grid">
+                        <!-- Card 1 - Active -->
+                        <div class="subset-card active">
+                            <div class="subset-card-left">
+                                <div class="subset-icon-wrapper">📁</div>
+                                <div class="subset-index">#1</div>
+                            </div>
+                            <div class="subset-card-middle">
+                                <h4>1. Bạn có chắc không?</h4>
+                                <div class="subset-stats-row">
+                                    <span class="subset-words">0 / 32 từ</span>
+                                    <span class="subset-percent">0%</span>
+                                </div>
+                                <div class="subset-progress-bar"><div class="subset-progress-fill" style="width:0%"></div></div>
+                            </div>
+                            <div class="subset-card-right">
+                                <div class="subset-play-action"><i data-lucide="play"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        lucide.createIcons();
+        const units = [
+            { id: 2, name: "Bạn đang bị bắt", words: 37 },
+            { id: 3, name: "Bộ phận cơ thể", words: 28 },
+            { id: 4, name: "Các hành động", words: 30 },
+            { id: 5, name: "Cảnh sát ngữ pháp", words: 33 },
+            { id: 6, name: "Chuyện cổ tích", words: 32 },
+            { id: 7, name: "Chúc bạn một ly", words: 21 },
+            { id: 8, name: "Chúng ta tin vào chúa", words: 35 },
+            { id: 9, name: "Cụm động từ", words: 40 },
+            { id: 10, name: "Công việc mơ ước của tôi", words: 30 },
+            { id: 11, name: "Cơ thể của bạn", words: 33 },
+            { id: 12, name: "Em là tình yêu của anh", words: 30 },
+            { id: 13, name: "Gia đình là mãi mãi", words: 32 },
+            { id: 14, name: "Hãy bắt tay vào công việc", words: 40 },
+            { id: 15, name: "Hãy gọi cho tôi!", words: 35 },
+            { id: 16, name: "Hãy là người thay đổi", words: 35 },
+            { id: 17, name: "Hãy làm điều đó", words: 32 },
+            { id: 18, name: "Hãy lên đường", words: 37 },
+            { id: 19, name: "Hãy nói về xã hội!", words: 34 },
+            { id: 20, name: "Không có tin nào tốt!", words: 32 },
+            { id: 21, name: "Luật là luật", words: 39 },
+            { id: 22, name: "Mẹ thiên nhiên", words: 29 },
+            { id: 23, name: "Nghệ thuật không có quy tắc", words: 30 },
+            { id: 24, name: "Ngôn ngữ cơ thể", words: 28 },
+            { id: 25, name: "Người đam mê máy tính", words: 30 },
+            { id: 26, name: "Nhà là nơi có trái tim", words: 33 },
+            { id: 27, name: "Nhà vua", words: 34 },
+            { id: 28, name: "Như bạn thích", words: 25 },
+            { id: 29, name: "Nói một cách khoa học", words: 35 },
+            { id: 30, name: "Nơi có nhiều hình dạng và màu sắc", words: 31 },
+            { id: 31, name: "Quá tuyệt cho trường học", words: 33 },
+            { id: 32, name: "Sở thú", words: 27 },
+            { id: 33, name: "Sức khoẻ hơn sự giàu có", words: 35 },
+            { id: 34, name: "Sự hạnh phúc", words: 27 },
+            { id: 35, name: "Thanh tra Tiện ích", words: 34 },
+            { id: 36, name: "Theo ý kiến khiêm tốn của tôi", words: 34 },
+            { id: 37, name: "Thất bại không phải là một lựa chọn!", words: 38 },
+            { id: 38, name: "Thế giới của người giàu", words: 33 },
+            { id: 39, name: "Thể hiện bản thân", words: 34 },
+            { id: 40, name: "Thời gian là tiền bạc", words: 31 },
+            { id: 41, name: "Thời tiết & Mùa", words: 31 },
+            { id: 42, name: "Thời trang", words: 36 },
+            { id: 43, name: "Thức ăn ngon, tâm trạng tốt", words: 37 },
+            { id: 44, name: "Thực vật", words: 31 },
+            { id: 45, name: "Tìm kiếm rắc rối?", words: 31 },
+            { id: 46, name: "Tính cách của bạn", words: 35 },
+            { id: 47, name: "Tính từ chung 1", words: 35 },
+            { id: 48, name: "Tính từ chung 2", words: 35 },
+            { id: 49, name: "Trạng từ chung", words: 38 },
+            { id: 50, name: "Trên màn hình", words: 31 },
+            { id: 51, name: "Tập thể dục", words: 34 },
+            { id: 52, name: "Tôi không chọn cuộc sống thành thị", words: 33 },
+            { id: 53, name: "Vụ mùa", words: 33 },
+            { id: 54, name: "Xung đột là bất khả kháng", words: 39 },
+            { id: 55, name: "Âm nhạc thật hay", words: 33 },
+            { id: 56, name: "Đi lái xe thôi", words: 32 },
+            { id: 57, name: "Đi vào vũ trụ", words: 33 },
+            { id: 58, name: "Đo lường", words: 35 },
+            { id: 59, name: "Đó là chính trị", words: 40 },
+            { id: 60, name: "Đồ ăn", words: 28 },
+            { id: 61, name: "Động từ chung", words: 34 },
+            { id: 62, name: "Đặt tên cho trò chơi", words: 25 },
+            { id: 63, name: "Đừng kìm nén cảm xúc của bạn", words: 40 },
+            { id: 64, name: "Đứng trên vai người khổng lồ!", words: 37 }
+        ];
+        const grid = document.getElementById('subset-grid');
+        units.forEach(unit => {
+            const card = document.createElement('div');
+            card.className = 'subset-card locked';
+            card.innerHTML = `
+                <div class="subset-card-left"><div class="subset-index-circle">${unit.id}</div></div>
+                <div class="subset-card-middle">
+                    <h4><i data-lucide="lock" class="icon-inline"></i> ${unit.id}. ${unit.name}</h4>
+                    <div class="subset-stats-row"><span class="subset-words">${unit.words} từ</span></div>
+                </div>
+                <span class="pro-badge-small">PRO</span>
+            `;
+            grid.appendChild(card);
+        });
+        lucide.createIcons();
+    </script>
+</body>
+</html>

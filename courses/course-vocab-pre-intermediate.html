@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary In Use - Pre-intermediate & Intermediate | Ma Đạo Tông Sư</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Philosopher:ital,wght@1,700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../responsive.css">
+    <style>
+        .subset-index-circle {
+            width: 44px;
+            height: 44px;
+            background: #252a35;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #94a3b8;
+            flex-shrink: 0;
+        }
+        .subset-card.locked .subset-index-circle {
+            background: #252a35;
+            color: #64748b;
+        }
+        .icon-inline {
+            width: 14px;
+            height: 14px;
+            vertical-align: middle;
+            margin-right: 4px;
+            margin-top: -2px;
+            color: #f2c94c;
+        }
+        .cd-badge.percent-purple {
+            background: rgba(168, 85, 247, 0.1);
+            color: #a855f7;
+        }
+        .green-shadow {
+            box-shadow: 0 8px 16px rgba(39, 174, 96, 0.3) !important;
+            background: linear-gradient(135deg, #27ae60, #10b881) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <span class="logo-text">Ma Đạo Tông Sư</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="../index.html" class="nav-item">
+                    <i data-lucide="home"></i>
+                    <span>Trang chủ</span>
+                </a>
+                <a href="#" class="nav-item active">
+                    <i data-lucide="layers"></i>
+                    <span>Bộ từ vựng</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="book-open"></i>
+                    <span>Từ vựng</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="gamepad-2"></i>
+                    <span>Game phản xạ</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="shopping-bag"></i>
+                    <span>Cửa hàng</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="bar-chart-2"></i>
+                    <span>Xếp hạng</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="collapse-btn">
+                    <i data-lucide="chevrons-left"></i>
+                </button>
+                <div class="user-profile">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=user1" alt="Avatar" class="avatar">
+                    <div class="user-info">
+                        <span class="user-name">Trung Tien Tr...</span>
+                    </div>
+                </div>
+                <div class="theme-toggle">
+                    <div class="points">
+                        <i data-lucide="coins" class="coin-icon"></i>
+                        <span>110</span>
+                    </div>
+                    <div class="mode">
+                        <i data-lucide="sun"></i>
+                        <span>Sáng</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-right">
+                    <div class="streak-badge">
+                        <i data-lucide="flame"></i>
+                        <span>1</span>
+                    </div>
+                    <button class="upgrade-btn">
+                        <i data-lucide="zap"></i>
+                        NÂNG CẤP PRO
+                    </button>
+                </div>
+            </header>
+
+            <!-- Course Detail View -->
+            <div class="course-detail-page">
+                <div class="cd-header">
+                    <div class="cd-header-left">
+                        <a href="../index.html" class="cd-back-btn" title="Quay lại">
+                            <i data-lucide="arrow-left"></i>
+                        </a>
+                        <div class="cd-title-group">
+                            <div class="cd-icon-box green-shadow">
+                                <i data-lucide="book"></i>
+                            </div>
+                            <div class="cd-info-main">
+                                <h2>📚 Vocabulary In Use - Pre-intermediate & Intermediate</h2>
+                                <div class="cd-badges">
+                                    <span class="cd-badge"><i data-lucide="layers"></i> 100 bộ từ</span>
+                                    <span class="cd-badge light"><i data-lucide="book"></i> 2884 từ vựng</span>
+                                    <span class="cd-badge percent-purple">0% hoàn thành</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cd-header-right">
+                        <div class="cd-actions-secondary">
+                            <button class="btn-cd-secondary"><i data-lucide="pin" class="icon-sm"></i> Ghim</button>
+                            <button class="btn-cd-secondary"><i data-lucide="award" class="icon-sm"></i> BXH</button>
+                        </div>
+                        <button class="btn-cd-primary glow-cyan">
+                            <i data-lucide="clock"></i> Học ngắt quãng
+                        </button>
+                    </div>
+                </div>
+
+                <div class="cd-progress-section">
+                    <div class="cd-progress-info">
+                        Tiến độ: <span class="white-text">0/2884 từ</span>
+                    </div>
+                    <div class="cd-progress-bar-container">
+                        <div class="cd-progress-bar-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div class="subset-section">
+                    <div class="subset-header">
+                        <h3>Các bộ từ</h3>
+                        <button class="btn-unlock-pro">
+                            <i data-lucide="crown"></i> Mở khóa
+                        </button>
+                    </div>
+                    <div class="subset-grid" id="subset-grid">
+                        <!-- Unit 1 -->
+                        <div class="subset-card active">
+                            <div class="subset-card-left">
+                                <div class="subset-icon-wrapper">📁</div>
+                                <div class="subset-index">#1</div>
+                            </div>
+                            <div class="subset-card-middle">
+                                <h4>Unit 1: Learning vocabulary</h4>
+                                <div class="subset-stats-row">
+                                    <span class="subset-words">0 / 15 từ</span>
+                                    <span class="subset-percent">0%</span>
+                                </div>
+                                <div class="subset-progress-bar">
+                                    <div class="subset-progress-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="subset-card-right">
+                                <div class="subset-play-action">
+                                    <i data-lucide="play"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // Data for units 2-57 as per images
+        const units = [
+            { id: 2, name: "Unit 2: Keeping a vocabulary notebook", words: 15 },
+            { id: 3, name: "Unit 3: Using a dictionary", words: 13 },
+            { id: 4, name: "Unit 4: English language words", words: 17 },
+            { id: 5, name: "Unit 5: Country, nationality and language", words: 16 },
+            { id: 6, name: "Unit 6: The physical world", words: 13 },
+            { id: 7, name: "Unit 7: Weather", words: 12 },
+            { id: 8, name: "Unit 8: Animals and insects", words: 10 },
+            { id: 9, name: "Unit 9: The body and movement", words: 11 },
+            { id: 10, name: "Unit 10: Describing appearance", words: 15 },
+            { id: 11, name: "11. Describing Character", words: 35 },
+            { id: 12, name: "12. Feelings", words: 28 },
+            { id: 13, name: "13. Family and Friends", words: 28 },
+            { id: 14, name: "14. Growing Up", words: 31 },
+            { id: 15, name: "15. Romance, Marriage and Divorce", words: 29 },
+            { id: 16, name: "16. Daily Routines", words: 39 },
+            { id: 17, name: "17. The Place Where You Live", words: 29 },
+            { id: 18, name: "18. Around the Home", words: 37 },
+            { id: 19, name: "19. Money", words: 31 },
+            { id: 20, name: "20. Health", words: 29 },
+            { id: 21, name: "21. Clothes", words: 40 },
+            { id: 22, name: "22. Fashion and Buying Clothes", words: 22 },
+            { id: 23, name: "23. Shopping", words: 24 },
+            { id: 24, name: "24. Food", words: 50 },
+            { id: 25, name: "25. Cooking", words: 37 },
+            { id: 26, name: "26. City Life", words: 29 },
+            { id: 27, name: "27. Life In the Country", words: 36 },
+            { id: 28, name: "28. Transport", words: 54 },
+            { id: 29, name: "29. On the Road", words: 36 },
+            { id: 30, name: "30. Notices and Warnings", words: 24 },
+            { id: 31, name: "31. Classroom Language", words: 36 },
+            { id: 32, name: "32. School Education", words: 40 },
+            { id: 33, name: "33. Studying English and Taking Exams", words: 35 },
+            { id: 34, name: "34. University Education", words: 45 },
+            { id: 35, name: "35. Jobs", words: 47 },
+            { id: 36, name: "36. Talking About Your Work", words: 30 },
+            { id: 37, name: "37. Making a Career", words: 31 },
+            { id: 38, name: "38. Working In an Office", words: 29 },
+            { id: 39, name: "39. Running a Company", words: 36 },
+            { id: 40, name: "40. Business and Finance", words: 46 },
+            { id: 41, name: "41. Sport and Leisure", words: 63 },
+            { id: 42, name: "42. Competitive Sport", words: 32 },
+            { id: 43, name: "43. Books and Films", words: 29 },
+            { id: 44, name: "44. Music", words: 49 },
+            { id: 45, name: "45. Special Events", words: 21 },
+            { id: 46, name: "46. Travel Bookings", words: 20 },
+            { id: 47, name: "47. Air Travel", words: 0 },
+            { id: 48, name: "48. Hotels and Restaurants", words: 36 },
+            { id: 49, name: "49. Café", words: 29 },
+            { id: 50, name: "50. Sightseeing Holidays", words: 26 },
+            { id: 51, name: "51. Holidays By the Sea", words: 25 },
+            { id: 52, name: "52. Newspapers and Television", words: 31 },
+            { id: 53, name: "53. Phoning and Texting", words: 27 },
+            { id: 54, name: "54. Computers", words: 40 },
+            { id: 55, name: "55. Email and the Internet", words: 36 },
+            { id: 56, name: "56. Crime", words: 38 },
+            { id: 57, name: "57. Politics", words: 33 },
+            { id: 58, name: "58. Climate Change", words: 33 },
+            { id: 59, name: "59. War and Violence", words: 29 },
+            { id: 60, name: "60. Time", words: 34 },
+            { id: 61, name: "61. Numbers", words: 50 },
+            { id: 62, name: "62. Distance, Dimensions and Size", words: 37 },
+            { id: 63, name: "63. Objects, Materials, Shapes and Colour", words: 46 },
+            { id: 64, name: "64. Containers and Quantities", words: 30 },
+            { id: 65, name: "65. Apologies, Excuses and Thanks", words: 29 },
+            { id: 66, name: "66. Requests, Permission and...", words: 13 },
+            { id: 67, name: "67. Opinions, Agreeing and...", words: 24 },
+            { id: 68, name: "68. Likes, Dislikes, Attitudes and...", words: 15 },
+            { id: 69, name: "69. Greetings, Farewells and Special...", words: 23 },
+            { id: 70, name: "70. Prefixes: Changing Meaning", words: 35 },
+            { id: 71, name: "71. Suffixes: Forming Nouns", words: 42 },
+            { id: 72, name: "72. Suffixes: Forming Adjectives", words: 37 },
+            { id: 73, name: "73. Compound Nouns", words: 33 },
+            { id: 74, name: "74. Word Partners", words: 50 },
+            { id: 75, name: "75. Fixed Phrases", words: 20 },
+            { id: 76, name: "76. Fixed Phrases In Conversation", words: 15 },
+            { id: 77, name: "77. Verb or Adjective + Preposition", words: 23 },
+            { id: 78, name: "78. Prepositional Phrases", words: 17 },
+            { id: 79, name: "79. Phrasal Verbs 1: Form and Meaning", words: 22 },
+            { id: 80, name: "80. Phrasal Verbs 2: Grammar and Style", words: 21 },
+            { id: 81, name: "81. Make, Do and Take: Uses and Phrases", words: 29 },
+            { id: 82, name: "82. Key Verbs: Give, Keep and Miss", words: 26 },
+            { id: 83, name: "83. Get: Uses, Phrases and Phrasal Verbs", words: 21 },
+            { id: 84, name: "84. Go: Meanings and Expressions", words: 24 },
+            { id: 85, name: "85. The Senses", words: 32 },
+            { id: 86, name: "86. Uncountable Nouns", words: 24 },
+            { id: 87, name: "87. Verb Constructions 1", words: 20 },
+            { id: 88, name: "88. Verb Constructions 2", words: 18 },
+            { id: 89, name: "89. Adjectives", words: 29 },
+            { id: 90, name: "90. Prepositions: Place and Movement", words: 23 },
+            { id: 91, name: "91. Adverbs", words: 30 },
+            { id: 92, name: "92. Time and Sequence", words: 18 },
+            { id: 93, name: "93. Addition and Contrast", words: 19 },
+            { id: 94, name: "94. Reason, Purpose, Result, Condition", words: 16 },
+            { id: 95, name: "95. Formal and Informal English", words: 24 },
+            { id: 96, name: "96. Completing Forms and CVs", words: 30 },
+            { id: 97, name: "97. Writing an Essay", words: 20 },
+            { id: 98, name: "98. Formal Letters and Emails", words: 25 },
+            { id: 99, name: "99. Informal Emails and Messages", words: 25 },
+            { id: 100, name: "100. Abbreviations", words: 38 }
+        ];
+
+        const grid = document.getElementById('subset-grid');
+        
+        units.forEach(unit => {
+            const card = document.createElement('div');
+            card.className = 'subset-card locked';
+            card.innerHTML = `
+                <div class="subset-card-left">
+                    <div class="subset-index-circle">${unit.id}</div>
+                </div>
+                <div class="subset-card-middle">
+                    <h4><i data-lucide="lock" class="icon-inline"></i> ${unit.name}</h4>
+                    <div class="subset-stats-row">
+                        <span class="subset-words">${unit.words} từ</span>
+                    </div>
+                </div>
+                <span class="pro-badge-small">PRO</span>
+            `;
+            grid.appendChild(card);
+        });
+
+        lucide.createIcons();
+    </script>
+</body>
+</html>

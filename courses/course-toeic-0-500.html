@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOEIC 0-500+ | Ma Đạo Tông Sư</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Philosopher:ital,wght@1,700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../responsive.css">
+    <style>
+        .subset-index-circle {
+            width: 44px;
+            height: 44px;
+            background: #252a35;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #94a3b8;
+            flex-shrink: 0;
+        }
+        .subset-card.locked .subset-index-circle {
+            background: #252a35;
+            color: #64748b;
+        }
+        .icon-inline {
+            width: 14px;
+            height: 14px;
+            vertical-align: middle;
+            margin-right: 4px;
+            margin-top: -2px;
+            color: #f2c94c;
+        }
+        .cd-badge.percent-purple {
+            background: rgba(168, 85, 247, 0.1);
+            color: #a855f7;
+        }
+        .green-shadow {
+            box-shadow: 0 8px 16px rgba(34, 197, 94, 0.3) !important;
+            background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <span class="logo-text">Ma Đạo Tông Sư</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="../index.html" class="nav-item">
+                    <i data-lucide="home"></i>
+                    <span>Trang chủ</span>
+                </a>
+                <a href="#" class="nav-item active">
+                    <i data-lucide="layers"></i>
+                    <span>Bộ từ vựng</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="book-open"></i>
+                    <span>Từ vựng</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="gamepad-2"></i>
+                    <span>Game phản xạ</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="shopping-bag"></i>
+                    <span>Cửa hàng</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="bar-chart-2"></i>
+                    <span>Xếp hạng</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="collapse-btn">
+                    <i data-lucide="chevrons-left"></i>
+                </button>
+                <div class="user-profile">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=user1" alt="Avatar" class="avatar">
+                    <div class="user-info">
+                        <span class="user-name">Trung Tien Tr...</span>
+                    </div>
+                </div>
+                <div class="theme-toggle">
+                    <div class="points">
+                        <i data-lucide="coins" class="coin-icon"></i>
+                        <span>110</span>
+                    </div>
+                    <div class="mode">
+                        <i data-lucide="sun"></i>
+                        <span>Sáng</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-right">
+                    <div class="streak-badge">
+                        <i data-lucide="flame"></i>
+                        <span>1</span>
+                    </div>
+                    <button class="upgrade-btn">
+                        <i data-lucide="zap"></i>
+                        NÂNG CẤP PRO
+                    </button>
+                </div>
+            </header>
+
+            <!-- Course Detail View -->
+            <div class="course-detail-page">
+                <div class="cd-header">
+                    <div class="cd-header-left">
+                        <a href="../index.html" class="cd-back-btn" title="Quay lại">
+                            <i data-lucide="arrow-left"></i>
+                        </a>
+                        <div class="cd-title-group">
+                            <div class="cd-icon-box green-shadow">
+                                <i data-lucide="book"></i>
+                            </div>
+                            <div class="cd-info-main">
+                                <h2>📚 TOEIC 0-500+</h2>
+                                <div class="cd-badges">
+                                    <span class="cd-badge"><i data-lucide="layers"></i> 50 bộ từ</span>
+                                    <span class="cd-badge light"><i data-lucide="book"></i> 600 từ vựng</span>
+                                    <span class="cd-badge percent-purple">0% hoàn thành</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cd-header-right">
+                        <div class="cd-actions-secondary">
+                            <button class="btn-cd-secondary"><i data-lucide="pin" class="icon-sm"></i> Ghim</button>
+                            <button class="btn-cd-secondary"><i data-lucide="award" class="icon-sm"></i> BXH</button>
+                        </div>
+                        <button class="btn-cd-primary glow-cyan">
+                            <i data-lucide="clock"></i> Học ngắt quãng
+                        </button>
+                    </div>
+                </div>
+
+                <div class="cd-progress-section">
+                    <div class="cd-progress-info">
+                        Tiến độ: <span class="white-text">0/600 từ</span>
+                    </div>
+                    <div class="cd-progress-bar-container">
+                        <div class="cd-progress-bar-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div class="subset-section">
+                    <div class="subset-header">
+                        <h3>Các bộ từ</h3>
+                        <button class="btn-unlock-pro">
+                            <i data-lucide="crown"></i> Mở khóa
+                        </button>
+                    </div>
+                    <div class="subset-grid" id="subset-grid">
+                        <!-- Unit 1 -->
+                        <div class="subset-card active">
+                            <div class="subset-card-left">
+                                <div class="subset-icon-wrapper">📁</div>
+                                <div class="subset-index">#1</div>
+                            </div>
+                            <div class="subset-card-middle">
+                                <h4>1 - Contracts</h4>
+                                <div class="subset-stats-row">
+                                    <span class="subset-words">0 / 12 từ</span>
+                                    <span class="subset-percent">0%</span>
+                                </div>
+                                <div class="subset-progress-bar">
+                                    <div class="subset-progress-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="subset-card-right">
+                                <div class="subset-play-action">
+                                    <i data-lucide="play"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // Data for units 2-50
+        const units = [
+            { id: 2, name: "2 - Marketing", words: 12 },
+            { id: 3, name: "3 - Warranties", words: 12 },
+            { id: 4, name: "4 - Business Planning", words: 12 },
+            { id: 5, name: "5 - Conferences", words: 12 },
+            { id: 6, name: "6 - Computers & the Internet", words: 12 },
+            { id: 7, name: "7 - Office Technology", words: 12 },
+            { id: 8, name: "8 - Office Procedures", words: 12 },
+            { id: 9, name: "9 - Electronics", words: 12 },
+            { id: 10, name: "10 - Correspondence", words: 12 },
+            { id: 11, name: "11 - Job Ads & Recruitment", words: 12 },
+            { id: 12, name: "12 - Apply and Interviewing", words: 12 },
+            { id: 13, name: "13 - Hiring and Training", words: 12 },
+            { id: 14, name: "14 - Salaries & Benefits", words: 12 },
+            { id: 15, name: "15 - Promotions & Awards", words: 12 },
+            { id: 16, name: "16 - Shopping", words: 12 },
+            { id: 17, name: "17 - Ordering Supplies", words: 12 },
+            { id: 18, name: "18 - Shipping", words: 12 },
+            { id: 19, name: "19 - Invoices", words: 12 },
+            { id: 20, name: "20 - Inventory", words: 12 },
+            { id: 21, name: "21 - Banking", words: 12 },
+            { id: 22, name: "22 - Accounting", words: 12 },
+            { id: 23, name: "23 - Investments", words: 12 },
+            { id: 24, name: "24 - Taxes", words: 12 },
+            { id: 25, name: "25 - Financial Statements", words: 12 },
+            { id: 26, name: "26 - Property & Departments", words: 12 },
+            { id: 27, name: "27 - Board Meeting", words: 12 },
+            { id: 28, name: "28 - Quality Control", words: 12 },
+            { id: 29, name: "29 - Product Development", words: 12 },
+            { id: 30, name: "30 - Renting & Leasing", words: 12 },
+            { id: 31, name: "31 - Selecting A Restaurant", words: 12 },
+            { id: 32, name: "32 - Eating Out", words: 12 },
+            { id: 33, name: "33 - Ordering Lunch", words: 12 },
+            { id: 34, name: "34 - Cooking As A Career", words: 12 },
+            { id: 35, name: "35 - Events", words: 12 },
+            { id: 36, name: "36 - General Travel", words: 12 },
+            { id: 37, name: "37 - Airlines", words: 12 },
+            { id: 38, name: "38 - Trains", words: 12 },
+            { id: 39, name: "39 - Hotels", words: 12 },
+            { id: 40, name: "40 - Car Rentals", words: 12 },
+            { id: 41, name: "41 - Movies", words: 12 },
+            { id: 42, name: "42 - Theater", words: 12 },
+            { id: 43, name: "43 - Music", words: 12 },
+            { id: 44, name: "44 - Museums", words: 12 },
+            { id: 45, name: "45 - Media", words: 12 },
+            { id: 46, name: "46 - Doctor's Office", words: 12 },
+            { id: 47, name: "47 - Dentist's Office", words: 12 },
+            { id: 48, name: "48 - Health", words: 12 },
+            { id: 49, name: "49 - Hospitals", words: 12 },
+            { id: 50, name: "50 - Pharmacy", words: 12 }
+        ];
+
+        const grid = document.getElementById('subset-grid');
+        
+        units.forEach(unit => {
+            const card = document.createElement('div');
+            card.className = 'subset-card locked';
+            card.innerHTML = `
+                <div class="subset-card-left">
+                    <div class="subset-index-circle">#${unit.id}</div>
+                </div>
+                <div class="subset-card-middle">
+                    <h4><i data-lucide="lock" class="icon-inline"></i> ${unit.name}</h4>
+                    <div class="subset-stats-row">
+                        <span class="subset-words">${unit.words} từ</span>
+                    </div>
+                </div>
+                <span class="pro-badge-small">PRO</span>
+            `;
+            grid.appendChild(card);
+        });
+
+        lucide.createIcons();
+    </script>
+</body>
+</html>
